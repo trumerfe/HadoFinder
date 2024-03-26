@@ -1,8 +1,29 @@
-# React + Vite
+# Local Locator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a repository for the Local Locator project.
 
-Currently, two official plugins are available:
+Local Locator is a react-based web application created to help fighting game players find their local communities and tournaments.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+* Find fighting game events near you.
+* Interactive map populated with real-time information that shows tournament locations.
+* Calendar view with every event in your area.
+* Data collected from popular tournament organizing website [start.gg](https://www.start.gg/).
+* Tournament organizers and Community Managers can also add events manually.
+
+## Tech Stack Used:
+
+* HTMl | CSS | JavaScript
+* React
+* Node.js
+* Express
+* MySQL
+* Knex.js
+
+## TODO
+* Usage Instructions
+* Screenshots
+* API Reference
+* Installation Instructions
+* Lessons Learned & Next Steps
