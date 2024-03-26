@@ -20,7 +20,7 @@ const DatePicker = () => {
           showMonthPicker={isPickerOpen}
         />
         {isPickerOpen ? (
-          <MonthPicker
+          <MonthPicker className='monthPicker'
             setIsOpen={setIsPickerOpen}
             selected={selectedMonthData}
             onChange={setSelectedMonthData}

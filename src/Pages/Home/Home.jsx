@@ -17,7 +17,7 @@ const Home = () => {
     console.log('Success')
     const lat = position.coords.latitude
     const lon = position.coords.longitude
-    console.log(lat)
+    // console.log(lat)
     const location = [lat, lon]
     console.log(location)
     setLocation(location)

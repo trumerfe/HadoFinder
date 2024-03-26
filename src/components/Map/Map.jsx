@@ -6,10 +6,20 @@ import { useState } from 'react'
 const Map = (props) => {
 
   const mapRef = useRef(null);
-  const latitude = 40.7824545;
-  const longitude = -73.9753915;
 
-  console.log(props.location)
+  const [latitude, setLatitude] = useState(40.72515026722599)
+  const [longitude, setLongitude] = useState(-73.99676899560035)
+
+  console.log(latitude)
+  console.log(longitude)
+  const setMyCoords = () => {
+    setLatitude(props.location[0])
+    setLongitude(props.location[1])
+  }
+
+  useEffect(() => {
+    setMyCoords()
+  },[props.location])
 
   return (
     // Component from the leaflet react library
@@ -24,8 +34,10 @@ const Map = (props) => {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      {/* Sets position of marker (to be populated by coordinates provided by geolocation and API calls) */}
-      <Marker position={[40.77804124121347, -73.98593338986052]}>
+      {/* Sets position of marker (to be populated by coordinates provided by geolocation and API calls)
+          Currently, state goes undefined for a moment when fetching geolocation data which breaks the page.
+          Must set a placeholder to fix. */}
+      <Marker position={[40.72515026722599, -73.99676899560035]}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
