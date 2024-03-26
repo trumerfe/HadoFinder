@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from 'react'
 
@@ -9,9 +9,11 @@ const Map = (props) => {
 
   const [latitude, setLatitude] = useState(40)
   const [longitude, setLongitude] = useState(-73)
+  const [latLng, setLatLng] = useState ([latitude, longitude])
 
   console.log(latitude)
   console.log(longitude)
+  // console.log(latLng)
   const setMyCoords = () => {
     setLatitude(props.location[0])
     setLongitude(props.location[1])
@@ -20,6 +22,7 @@ const Map = (props) => {
   useEffect(() => {
     setMyCoords()
   },[props.location])
+
 
   return (
     // Component from the leaflet react library
