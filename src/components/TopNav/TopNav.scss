@@ -6,10 +6,10 @@
   align-items: center;
   flex-direction: column;
   margin: 0 16px;
-  color: white;
+  color: $OffWhite;
 
   &__title {
-    color: $Pink;
+    color: $HotPink;
     @include topNavTitle;
     margin: 16px 0;
   }
@@ -22,13 +22,13 @@
     // border-style: solid;
     // border-color: $Pink;
     align-items: center;
-    color: $Pink;
+    color: $HotPink;
     @include topnavText;
   }
 
   &__iconMap {
     // height: 48px;
-    color: white;
+    color: $OffWhite;
     height: 48px;
   }
 
