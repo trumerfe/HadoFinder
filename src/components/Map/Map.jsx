@@ -6,8 +6,8 @@ import { useState } from 'react'
 const Map = (props) => {
 
   const mapRef = useRef(null);
-  const latitude = 51.505;
-  const longitude = -0.09;
+  const latitude = 40.7824545;
+  const longitude = -73.9753915;
 
   console.log(props.location)
 
@@ -25,7 +25,7 @@ const Map = (props) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {/* Sets position of marker (to be populated by coordinates provided by geolocation and API calls) */}
-      <Marker position={[51.505, -0.09]}>
+      <Marker position={[40.77804124121347, -73.98593338986052]}>
         <Popup>
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
