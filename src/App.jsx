@@ -5,6 +5,7 @@ import TopNav from './components/TopNav/TopNav'
 import Home from './Pages/Home/Home'
 
 function App() {
+
   return (
     <BrowserRouter>
       <TopNav />
