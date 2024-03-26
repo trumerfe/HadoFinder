@@ -1,0 +1,10 @@
+@use "../../partials/mixins" as *;
+@use '../../partials/variables' as *;
+@use '../../partials/global' as *;
+
+main {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

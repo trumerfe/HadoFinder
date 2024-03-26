@@ -1,0 +1,21 @@
+@use "./global" as *;
+@use "./variables" as *;
+
+@mixin topnavText {
+  font-family: 'trueno', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@mixin topNavTitle {
+  font-family: 'trueno', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+@mixin labelText {
+  font-family: 'trueno', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: $OffWhite;
+}

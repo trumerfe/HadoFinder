@@ -1,0 +1,44 @@
+@use "../../partials/mixins" as *;
+@use '../../partials/variables' as *;
+
+.topNav {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 16px;
+  color: white;
+
+  &__title {
+    color: $Pink;
+    @include topNavTitle;
+    margin: 16px 0;
+  }
+
+  &__div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    // border-radius: 1px;
+    // border-style: solid;
+    // border-color: $Pink;
+    align-items: center;
+    color: $Pink;
+    @include topnavText;
+  }
+
+  &__iconMap {
+    // height: 48px;
+    color: white;
+    height: 48px;
+  }
+
+  &__iconCalendar {
+    // height: 48px;
+    height: 40px;
+  }
+
+  &__iconUpload {
+    // height: 48px;
+    height: 40px;
+  }
+}
