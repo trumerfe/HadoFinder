@@ -1,8 +1,8 @@
-# Local Locator
+# HadoFinder
 
-This is a repository for the Local Locator project.
+This is a repository for the HadoFinder project.
 
-Local Locator is a react-based web application created to help fighting game players find their local communities and tournaments.
+HadoFinder is a react-based web application created to help fighting game players find their local communities and tournaments.
 
 ## Features
 
