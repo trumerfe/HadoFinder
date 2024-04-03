@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react'
 
 const Home = () => {
 
-  //TODO geolocation only working sometimes, most of the time location array logs as empty array. State not loading in time?
   const [location, setLocation] = useState([])
 
   function error() {
@@ -14,12 +13,12 @@ const Home = () => {
   }
 
   function success(position) {
-    console.log('Success')
+    // console.log('Success')
     const lat = position.coords.latitude
     const lon = position.coords.longitude
     // console.log(lat)
     const location = [lat, lon]
-    console.log(location)
+    // console.log(location)
     setLocation(location)
   }
 
