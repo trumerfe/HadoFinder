@@ -9,7 +9,7 @@ const DatePicker = () => {
   });
   const [isPickerOpen, setIsPickerOpen] = useState(false);
 
-  console.log(selectedMonthData)
+  // console.log(selectedMonthData)
   
   return (
     <>

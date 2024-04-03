@@ -3,6 +3,8 @@ import MonthPicker from "../../components/MonthPicker/MonthPicker"
 import Map from "../../components/Map/Map"
 import { useState, useEffect } from 'react'
 
+const apiKey = "c817c22c23246bc906960a32bf1fc5c8"
+
 const Home = () => {
 
   const [location, setLocation] = useState([])
