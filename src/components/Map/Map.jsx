@@ -10,15 +10,7 @@ import {
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
-
-const MyComponent = (props) => {
-  if (props.location[0] === undefined) {
-  } else {
-    const map = useMap();
-    map.setView([props.location[0], props.location[1]], map.getZoom())
-    return null;
-  }
-};
+import MapHooks from "../MapHooks/MapHooks";
 
 const Map = (props) => {
   const mapRef = useRef(null);
@@ -45,7 +37,7 @@ const Map = (props) => {
       // changes the dimensions of the map component
       style={{ height: "60vh", width: "90vw" }}
     >
-      <MyComponent location={props.location} />
+      <MapHooks location={props.location} />
       <TileLayer // assigns openstreetmap tileset
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

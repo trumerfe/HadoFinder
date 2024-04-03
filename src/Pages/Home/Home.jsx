@@ -3,7 +3,6 @@ import MonthPicker from "../../components/MonthPicker/MonthPicker"
 import Map from "../../components/Map/Map"
 import { useState, useEffect } from 'react'
 
-
 const Home = () => {
 
   const [location, setLocation] = useState([])
@@ -13,12 +12,9 @@ const Home = () => {
   }
 
   function success(position) {
-    // console.log('Success')
     const lat = position.coords.latitude
     const lon = position.coords.longitude
-    // console.log(lat)
     const location = [lat, lon]
-    // console.log(location)
     setLocation(location)
   }
 
