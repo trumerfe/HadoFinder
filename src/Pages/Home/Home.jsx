@@ -64,7 +64,7 @@ const Home = () => {
           variables: {
             "perPage": 100,
             "coordinates": `${location[0]}, ${location[1]}`,
-            "radius": "10mi"
+            "radius": "10km"
           }
         },
       });
