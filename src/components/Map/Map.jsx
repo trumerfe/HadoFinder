@@ -7,10 +7,12 @@ import {
   useMapEvents,
   useMap,
   useMapEvent,
+  Circle
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
 import MapHooks from "../MapHooks/MapHooks";
+// import { Circle } from "https://cdn.esm.sh/react-leaflet/Circle";
 
 const Map = (props) => {
   const mapRef = useRef(null);
@@ -27,6 +29,9 @@ const Map = (props) => {
   useEffect(() => {
     setMyCoords();
   }, [props.location]);
+
+  const center = [40.72515026722599, -73.99676899560035]
+  const fillBlueOptions = { fillColor: 'blue' }
 
   return (
     // Component from the leaflet react library
@@ -52,9 +57,12 @@ const Map = (props) => {
           </Popup>
         </Marker>
       ) : (
-        <Marker opacity={1.0} position={[latitude, longitude]}>
-          <Popup>{props.location}</Popup>
-        </Marker>
+        <>
+          <Marker opacity={1.0} position={[latitude, longitude]}>
+            <Popup>{props.location}</Popup>
+          </Marker>
+          <Circle center={[latitude, longitude]} pathOptions={fillBlueOptions} radius={1000} />
+        </>
       )}
     </MapContainer>
   );
