@@ -3,12 +3,11 @@ import MonthPicker from "../../components/MonthPicker/MonthPicker";
 import Map from "../../components/Map/Map";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { end } from "@popperjs/core";
 
 const apiKey = "c817c22c23246bc906960a32bf1fc5c8";
 
 const headers = {
-  "Authorization": "Bearer c817c22c23246bc906960a32bf1fc5c8",
+  "Authorization": `Bearer ${apiKey}`,
 };
 
 const endpoint = "https://api.start.gg/gql/alpha";
@@ -54,6 +53,8 @@ const Home = () => {
             tournaments(query: {
               perPage: $perPage
               filter: {
+                afterDate: 1711944000,
+                beforeDate: 1714536000,
                 location: {
                   distanceFrom: $coordinates,
                   distance: $radius
@@ -65,18 +66,20 @@ const Home = () => {
                 city
                 venueAddress
                 startAt
+                lat
+                lng
               }
             }
           }
           `,
           variables: {
-            "perPage": 1,
+            "perPage": 100,
             "coordinates": "40.72515026722599, -73.99676899560035",
             "radius": "5mi"
           }
         },
       });
-      console.log(response.data.data.tournaments.nodes[0]);
+      console.log(response.data.data.tournaments.nodes);
       console.log(response.data)
     } catch (error) {
       console.log(error);
