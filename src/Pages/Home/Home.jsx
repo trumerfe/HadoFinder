@@ -66,7 +66,7 @@ const Home = () => {
           variables: {
             "perPage": 100,
             "coordinates": `${location[0]}, ${location[1]}`,
-            "radius": "10km"
+            "radius": "25km"
           }
         },
       });
@@ -83,7 +83,7 @@ const Home = () => {
     // setEventList(response.data.tournaments.nodes)
   }, [location])
 
-
+  // console.log(eventList[0])
 
   return (
     <main>
