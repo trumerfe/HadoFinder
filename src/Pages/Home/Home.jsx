@@ -3,7 +3,9 @@ import MonthPicker from "../../components/MonthPicker/MonthPicker";
 import Map from "../../components/Map/Map";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import EventCalendar from "../../components/Calendar/Calendar";
 
+// .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
 const headers = {
   "Authorization": `Bearer ${apiKey}`,
@@ -26,11 +28,12 @@ const Home = () => {
     setLocation(location);
   }
 
+  // Geolocation API call
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success, error);
   }, []);
 
-
+// API Call to Start.gg
   const graphqlTest = async () => {
     try {
       const response = await axios({
@@ -80,7 +83,6 @@ const Home = () => {
 
   useEffect(() => {
     graphqlTest();
-    // setEventList(response.data.tournaments.nodes)
   }, [location])
 
   // console.log(eventList[0])
@@ -89,6 +91,7 @@ const Home = () => {
     <main>
       <MonthPicker />
       <Map location={location} eventList={eventList} />
+      <EventCalendar />
     </main>
   );
 };
