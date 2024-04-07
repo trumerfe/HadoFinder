@@ -4,15 +4,16 @@ import Map from "../../components/Map/Map";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const apiKey = "c817c22c23246bc906960a32bf1fc5c8";
+const apiKey = import.meta.env.VITE_SGG_KEY;
 const headers = {
   "Authorization": `Bearer ${apiKey}`,
 };
-const endpoint = "https://api.start.gg/gql/alpha";
+const endpoint = import.meta.env.VITE_SGG_URL;
 
 const Home = () => {
 
   const [location, setLocation] = useState([]);
+  const [eventList, setEventList] = useState([])
 
   function error() {
     console.log("Unable to retrieve your location");
@@ -57,6 +58,7 @@ const Home = () => {
                 startAt
                 lat
                 lng
+                slug
               }
             }
           }
@@ -64,25 +66,29 @@ const Home = () => {
           variables: {
             "perPage": 100,
             "coordinates": `${location[0]}, ${location[1]}`,
-            "radius": "10km"
+            "radius": "25km"
           }
         },
       });
-      console.log(response.data.data.tournaments.nodes);
-      console.log(response.data)
+      // console.log(response.data.data.tournaments.nodes);
+      setEventList(response.data.data.tournaments.nodes)
+      // console.log(eventList)
     } catch (error) {
       console.log(error);
     }
   };
 
-  graphqlTest();
+  useEffect(() => {
+    graphqlTest();
+    // setEventList(response.data.tournaments.nodes)
+  }, [location])
 
-
+  // console.log(eventList[0])
 
   return (
     <main>
       <MonthPicker />
-      <Map location={location} />
+      <Map location={location} eventList={eventList} />
     </main>
   );
 };
