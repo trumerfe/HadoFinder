@@ -1,10 +1,16 @@
 @import './variables';
 @import './reset';
 
+article {
+  max-width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
 .rbc-calendar {
   box-sizing: border-box;
   height: 100%;
-  max-width: 40%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: stretch;

@@ -91,6 +91,7 @@ const Home = () => {
       <MonthPicker />
       <div className="contentDiv">
         <Map location={location} eventList={eventList} />
+        <div style={{minWidth: '4%'}}></div>
         <EventCalendar eventList={eventList} />
       </div>
     </main>

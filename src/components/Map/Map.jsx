@@ -65,7 +65,7 @@ const Map = (props) => {
       zoom={10.5}
       ref={mapRef}
       // changes the dimensions of the map component
-      style={{ height: "70vh", width: "40vw", marginRight: "10vw", zIndex: "-1" }}
+      style={{ height: "70vh", minWidth: "48%", maxWidth: '100%', zIndex: "-1", borderRadius: '20px' }}
     >
       <MapHooks location={props.location} />
       <TileLayer // assigns openstreetmap tileset

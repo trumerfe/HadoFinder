@@ -1,6 +1,5 @@
 import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-const localizer = momentLocalizer(moment);
 import "./sass/styles.scss";
 import { useEffect, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
@@ -9,24 +8,29 @@ import { Popup } from "reactjs-popup";
 
 const EventCalendar = (props) => {
   const [calendarEvents, setCalendarEvents] = useState([]);
+
+  const localizer = momentLocalizer(moment);
+
+  // Handles opening and closing of modal
   const [open, setOpen] = useState(false);
-
-  const ref = useRef()
-
   const closeModal = () => setOpen(false);
 
-  console.log(props.eventList);
+  // Handles text inside the modal
+  const [eventName, setEventName] = useState("empty");
 
   let calendarItem = {};
   let tempArray = [];
 
   const arrMap = () => {
+    // Handles MAP function for populating the calendar
     if (props.eventList[0]) {
       props.eventList.map((item, index) => {
+        // startAt * 1000 to convert it to compatible timestamp format (13 digits)
         const startDate = new Date(parseInt(item.startAt * 1000));
         const endDate = new Date(parseInt(item.endAt * 1000));
 
         calendarItem = {
+          location: item.venueAddress,
           id: index,
           title: item.name,
           start: new Date(startDate),
@@ -36,52 +40,69 @@ const EventCalendar = (props) => {
       });
     }
   };
+
   useEffect(() => {
     arrMap();
     setCalendarEvents(tempArray);
   }, [props.eventList]);
 
-  const handleSelectEvent = useCallback(
-    (event) => window.alert(event.title),
-    []
-  );
-
+  // Handles modal pop up and modal dynamic text
+  const handleSelectEvent = useCallback((event) => {
+    setEventName(`${event.title} at ${event.location}`);
+    setOpen((o) => !o);
+  }, []);
 
   return (
-    <>
-      {calendarEvents[0] ? (
-        <Calendar
-          localizer={localizer}
-          dayLayoutAlgorithm={"no-overlap"}
-          events={calendarEvents}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-          onSelectEvent={() => setOpen((o) => !o)}
-          popup
-        />
-      ) : (
-        "Loading Map..."
-      )}
-      <Popup ref={ref} open={open} position='right center' closeOnDocumentClick onClose={closeModal}>
-        <div className="modal" style={{backgroundColor: "red", width: "30vw"}}>
-          {" "}
-          <a className="close" onClick={closeModal}>
-            {" "}
-            &times;{" "}
-          </a>{" "}
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni
-          omnis delectus nemo, maxime molestiae dolorem numquam mollitia,
-          voluptate ea, accusamus excepturi deleniti ratione sapiente!
-          Laudantium, aperiam doloribus. Odit, aut.{" "}
-        </div>
-      </Popup>
-    </>
+    // <>
+      <article className="calendarDiv">
+        {calendarEvents[0] ? (
+          <Calendar
+            localizer={localizer}
+            dayLayoutAlgorithm={"no-overlap"}
+            events={calendarEvents}
+            startAccessor="start"
+            endAccessor="end"
+            style={{ height: "70vh" }}
+            onSelectEvent={handleSelectEvent}
+            popup
+          />
+        ) : (
+          "Loading Map..."
+        )}
+        {
+          <Popup
+            open={open}
+            position="right center"
+            closeOnDocumentClick
+            onClose={closeModal}
+          >
+            <div
+              className="modal"
+              style={{
+                backgroundColor: "white",
+                width: "30vw",
+                height: "300px",
+                borderStyle: "solid",
+                borderWidth: "2px",
+                borderColor: "black",
+              }}
+            >
+              {" "}
+              <a className="close" onClick={closeModal}>
+                {" "}
+                &times;{" "}
+              </a>{" "}
+              {eventName}{" "}
+            </div>
+          </Popup>
+        }
+      </article>
+    // </>
   );
 };
+// Handles more events popup
 EventCalendar.propTypes = {
   localizer: PropTypes.instanceOf(DateLocalizer),
-  // onSelectEvent: PropTypes.instanceOf("Test")
 };
 
 export default EventCalendar;

@@ -15,6 +15,7 @@ main {
 
 .contentDiv {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 90vw;
+  overflow: hidden;
 }
