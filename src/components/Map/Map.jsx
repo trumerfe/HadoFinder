@@ -13,16 +13,29 @@ import "leaflet/dist/leaflet.css";
 import { useState } from "react";
 import MapHooks from "../MapHooks/MapHooks";
 import { map } from "leaflet";
+import { Icon } from "leaflet";
+import L from "leaflet";
+import mapIcon from "../../assets/icons/icons8-marker-50.png";
+
+const myIcon = new Icon({
+  iconUrl: mapIcon,
+iconSize: [30, 30],
+    iconAnchor: [22, 30],
+    popupAnchor: [-6, -17],// point from which the popup should open relative to the iconAnchor
+});
 
 const MultipleMarkers = (props) => {
-  // console.log(props.data) 
-  return props.data.map((item, index) => {
-    return <Marker key={index} position={[item.latitude, item.longitude]}>
-      <Popup>{item.name}</Popup>
-    </Marker>
-  })
-}
 
+
+  // console.log(props.data)
+  return props.data.map((item, index) => {
+    return (
+      <Marker icon={myIcon} key={index} position={[item.latitude, item.longitude]}>
+        <Popup>{item.name}</Popup>
+      </Marker>
+    );
+  });
+};
 
 const Map = (props) => {
   const mapRef = useRef(null);
@@ -38,6 +51,7 @@ const Map = (props) => {
     address: x.venueAddress,
     date: x.startAt,
     url: x.slug,
+    icon: mapIcon
   }));
 
   // coordsArr[0] ? console.log(coordsArr[0].latitude) : "";
@@ -56,7 +70,7 @@ const Map = (props) => {
   }, [props.location]);
 
   // const center = [40.72515026722599, -73.99676899560035]
-  const fillBlueOptions = { fillColor: "blue" };
+  const fillBlueOptions = { fillColor: "transparent", color: "#b732ff" };
 
   return (
     // Component from the leaflet react library
@@ -65,7 +79,13 @@ const Map = (props) => {
       zoom={10.5}
       ref={mapRef}
       // changes the dimensions of the map component
-      style={{ height: "70vh", minWidth: "48%", maxWidth: '100%', zIndex: "0", borderRadius: '20px' }}
+      style={{
+        height: "70vh",
+        minWidth: "48%",
+        maxWidth: "100%",
+        zIndex: "0",
+        borderRadius: "20px",
+      }}
     >
       <MapHooks location={props.location} />
       <TileLayer // assigns openstreetmap tileset
@@ -76,7 +96,12 @@ const Map = (props) => {
           Currently, state goes undefined for a moment when fetching geolocation data which breaks the page.
           Must set a placeholder to fix. */}
       {latitude === undefined ? (
-        <Marker opacity={0} position={[40.72515026722599, -73.99676899560035]}>
+        <Marker
+          icon={myIcon}
+          color="red"
+          opacity={0}
+          position={[40.72515026722599, -73.99676899560035]}
+        >
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
@@ -86,9 +111,7 @@ const Map = (props) => {
           {/* <Marker opacity={1.0} position={[latitude, longitude]}>
             <Popup>{props.location}</Popup>
           </Marker> */}
-          {coordsArr ? (
-            <MultipleMarkers data={coordsArr} />
-          ) : ''}
+          {coordsArr ? <MultipleMarkers data={coordsArr} /> : ""}
           <Circle
             center={[latitude, longitude]}
             pathOptions={fillBlueOptions}

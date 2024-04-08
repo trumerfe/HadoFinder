@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../../partials/variables';
 
 .rbc-event {
   border: none;
@@ -6,7 +7,7 @@
   box-shadow: none;
   margin: 0;
   padding: $event-padding;
-  background-color: $event-bg;
+  background-color: $Purple;
   border-radius: $event-border-radius;
   color: $event-color;
   cursor: pointer;

@@ -1,5 +1,6 @@
 @import './variables';
 @import './reset';
+@import '../../../partials/variables';
 
 article {
   max-width: 100%;
@@ -121,7 +122,7 @@ article {
 }
 
 .rbc-today {
-  background-color: $today-highlight-bg;
+  background-color: $LightMagenta;
 }
 
 @import './toolbar';
