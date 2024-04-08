@@ -8,14 +8,13 @@ import EventCalendar from "../../components/Calendar/Calendar";
 // .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
 const headers = {
-  "Authorization": `Bearer ${apiKey}`,
+  Authorization: `Bearer ${apiKey}`,
 };
 const endpoint = import.meta.env.VITE_SGG_URL;
 
 const Home = () => {
-
   const [location, setLocation] = useState([]);
-  const [eventList, setEventList] = useState([])
+  const [eventList, setEventList] = useState([]);
 
   function error() {
     console.log("Unable to retrieve your location");
@@ -33,7 +32,7 @@ const Home = () => {
     navigator.geolocation.getCurrentPosition(success, error);
   }, []);
 
-// API Call to Start.gg
+  // API Call to Start.gg
   const graphqlTest = async () => {
     try {
       const response = await axios({
@@ -59,6 +58,7 @@ const Home = () => {
                 city
                 venueAddress
                 startAt
+                endAt
                 lat
                 lng
                 slug
@@ -67,15 +67,15 @@ const Home = () => {
           }
           `,
           variables: {
-            "perPage": 100,
-            "coordinates": `${location[0]}, ${location[1]}`,
-            "radius": "25km"
-          }
+            perPage: 100,
+            coordinates: `${location[0]}, ${location[1]}`,
+            radius: "25km",
+          },
         },
       });
       // console.log(response.data.data.tournaments.nodes);
-      setEventList(response.data.data.tournaments.nodes)
-      // console.log(eventList)
+      setEventList(response.data.data.tournaments.nodes);
+      console.log(eventList)
     } catch (error) {
       console.log(error);
     }
@@ -83,15 +83,15 @@ const Home = () => {
 
   useEffect(() => {
     graphqlTest();
-  }, [location])
-
-  // console.log(eventList[0])
+  }, [location]);
 
   return (
     <main>
       <MonthPicker />
-      <Map location={location} eventList={eventList} />
-      <EventCalendar />
+      <div className="contentDiv">
+        <Map location={location} eventList={eventList} />
+        <EventCalendar eventList={eventList} />
+      </div>
     </main>
   );
 };

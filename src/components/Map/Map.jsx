@@ -15,7 +15,7 @@ import MapHooks from "../MapHooks/MapHooks";
 import { map } from "leaflet";
 
 const MultipleMarkers = (props) => {
-  console.log(props.data) 
+  // console.log(props.data) 
   return props.data.map((item, index) => {
     return <Marker key={index} position={[item.latitude, item.longitude]}>
       <Popup>{item.name}</Popup>
@@ -65,7 +65,7 @@ const Map = (props) => {
       zoom={10.5}
       ref={mapRef}
       // changes the dimensions of the map component
-      style={{ height: "70vh", width: "50vw" }}
+      style={{ height: "70vh", width: "40vw", marginRight: "10vw" }}
     >
       <MapHooks location={props.location} />
       <TileLayer // assigns openstreetmap tileset
