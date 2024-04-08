@@ -62,6 +62,7 @@ const Home = () => {
                 lat
                 lng
                 slug
+                hasOfflineEvents
               }
             }
           }
@@ -75,7 +76,7 @@ const Home = () => {
       });
       // console.log(response.data.data.tournaments.nodes);
       setEventList(response.data.data.tournaments.nodes);
-      console.log(eventList)
+      // console.log(eventList)
     } catch (error) {
       console.log(error);
     }
