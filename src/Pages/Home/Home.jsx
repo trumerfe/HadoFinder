@@ -48,8 +48,6 @@ const Home = () => {
     setRadius(event.target.value)
   }
 
-  console.log(radius)
-
   // API Call to Start.gg
   const graphqlTest = async () => {
     if (firstTimestamp) {

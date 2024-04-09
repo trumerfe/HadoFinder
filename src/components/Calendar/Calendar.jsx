@@ -5,6 +5,7 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import { DateLocalizer } from "react-big-calendar/lib/localizer";
 import { Popup } from "reactjs-popup";
+import { Link } from 'react-router-dom'
 
 const EventCalendar = (props) => {
   const [calendarEvents, setCalendarEvents] = useState([]);
@@ -17,6 +18,9 @@ const EventCalendar = (props) => {
 
   // Handles text inside the modal
   const [eventName, setEventName] = useState("empty");
+  const [eventAddress, setEventAddress] = useState("empty");
+  const [eventDate, setEventDate] = useState("empty");
+  const [eventLink, setEventLink] = useState("empty");
 
   let calendarItem = {};
   let tempArray = [];
@@ -33,6 +37,7 @@ const EventCalendar = (props) => {
           location: item.venueAddress,
           id: index,
           title: item.name,
+          link: item.slug,
           start: new Date(startDate),
           end: new Date(endDate),
         };
@@ -48,7 +53,10 @@ const EventCalendar = (props) => {
 
   // Handles modal pop up and modal dynamic text
   const handleSelectEvent = useCallback((event) => {
-    setEventName(`${event.title} at ${event.location}`);
+    setEventLink(`https://start.gg/${event.link}`)
+    setEventDate(event.start.toString().split('(')[0])
+    setEventName(event.title);
+    setEventAddress(event.location)
     setOpen((o) => !o);
   }, []);
 
@@ -85,14 +93,23 @@ const EventCalendar = (props) => {
                 borderStyle: "solid",
                 borderWidth: "2px",
                 borderColor: "black",
+                borderRadius: "20px",
+                display: "flex",
+                flexDirection: "column",
+                padding: "16px"
+                
               }}
             >
               {" "}
               <a className="close" onClick={closeModal}>
                 {" "}
-                &times;{" "}
+                Close{" "}
               </a>{" "}
-              {eventName}{" "}
+              <p>{eventName}</p>
+              <p>{eventAddress}</p>
+              <p>{eventDate}</p>
+              <a target="blank" href={eventLink}>{eventLink}</a>
+              {" "}
             </div>
           </Popup>
         }
