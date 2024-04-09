@@ -1,16 +1,27 @@
+import { useEffect, useState } from "react";
+import { MonthPicker, MonthInput } from "react-lite-month-picker";
 
-import { useState } from 'react';
-import { MonthPicker, MonthInput } from 'react-lite-month-picker';
+const DatePicker = (props) => {
+  const date = new Date();
+  const actualDate = date.toLocaleDateString();
+  const currDateArr = actualDate.split("/");
 
-const DatePicker = () => {
   const [selectedMonthData, setSelectedMonthData] = useState({
-    month: 9,
-    year: 2023,
+    month: currDateArr[0],
+    year: currDateArr[2],
   });
+
   const [isPickerOpen, setIsPickerOpen] = useState(false);
 
-  // console.log(selectedMonthData)
-  
+  useEffect(() => {
+    props.setFirstDay(
+      new Date(selectedMonthData.year, selectedMonthData.month - 1, 1)
+    );
+    props.setLastDay(
+      new Date(selectedMonthData.year, selectedMonthData.month, 1)
+    );
+  }, [selectedMonthData]);
+
   return (
     <>
       <div>
@@ -20,7 +31,8 @@ const DatePicker = () => {
           showMonthPicker={isPickerOpen}
         />
         {isPickerOpen ? (
-          <MonthPicker className='monthPicker'
+          <MonthPicker
+            className="monthPicker"
             setIsOpen={setIsPickerOpen}
             selected={selectedMonthData}
             onChange={setSelectedMonthData}
@@ -29,6 +41,6 @@ const DatePicker = () => {
       </div>
     </>
   );
-}
+};
 
-export default DatePicker
+export default DatePicker;
