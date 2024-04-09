@@ -100,6 +100,7 @@ const Home = () => {
 
   return (
     <main>
+      <select name="searchRadius"></select>
       <MonthPicker
         firstDay={firstDay}
         setFirstDay={setFirstDay}
