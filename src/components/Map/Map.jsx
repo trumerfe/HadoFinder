@@ -19,18 +19,20 @@ import mapIcon from "../../assets/icons/icons8-marker-50.png";
 
 const myIcon = new Icon({
   iconUrl: mapIcon,
-iconSize: [30, 30],
-    iconAnchor: [22, 30],
-    popupAnchor: [-6, -17],// point from which the popup should open relative to the iconAnchor
+  iconSize: [30, 30],
+  iconAnchor: [22, 30],
+  popupAnchor: [-6, -17], // point from which the popup should open relative to the iconAnchor
 });
 
 const MultipleMarkers = (props) => {
-
-
-  console.log(props.data)
+  // console.log(props.data)
   return props.data.map((item, index) => {
     return (
-      <Marker icon={myIcon} key={index} position={[item.latitude, item.longitude]}>
+      <Marker
+        icon={myIcon}
+        key={index}
+        position={[item.latitude, item.longitude]}
+      >
         <Popup>{item.name}</Popup>
       </Marker>
     );
@@ -51,7 +53,7 @@ const Map = (props) => {
     address: x.venueAddress,
     date: x.startAt,
     url: x.slug,
-    icon: mapIcon
+    icon: mapIcon,
   }));
 
   // coordsArr[0] ? console.log(coordsArr[0].latitude) : "";

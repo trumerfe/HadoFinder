@@ -73,18 +73,7 @@ The response body contains:
 
 ### Endpoints
 
-The site will utilize a proxy server to make the API calls to [start.gg](https://developer.start.gg/docs/intro) in order to keep the API key safe and private.
-
-The endpoint to this server will be '/tournaments'. This endpoint will support a GET request with the following parameters:
-* Coordinates: current coordinates of the user.
-* Radius: Distance around the user's current coordinates.
-
-It will then utilize these parameters to populate the GraphQL request to the start.gg API.
-The response will be the response body from the start.gg API call.
-
-Response example:
-
-<img alt="Screenshot of API response example" src="./src/assets/images/response-body-ex.png" height="300px">
+This project will be using an external API.
 
 ### Auth
 
@@ -123,16 +112,7 @@ Step 5 - Calendar:
 * Create modals that display more information when clicking on a certain event.
 * Expected duration: 3 days.
 
-Step 6 - Proxy Server:
-* Create server folder structure and files.
-* Migrate API call to the server.
-* Create endpoints for a GET call to be made in the front end.
-* Populate start.gg API call with the parameters obtained from the REST GET request from the front end.
-* Send start.gg API call response back to the front end as the response of the GET request made to the proxy server.
-* Store API key securely in the server.
-* Expected duration: 2-3 days.
-
-Step 7 - Styling:
+Step 6 - Styling:
 * Finish website styling.
 * Make website responsive for Desktop, Tablet, and Mobile.
 * Expected duration: 1-2 days.

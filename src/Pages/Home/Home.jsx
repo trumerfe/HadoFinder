@@ -15,6 +15,16 @@ const endpoint = import.meta.env.VITE_SGG_URL;
 const Home = () => {
   const [location, setLocation] = useState([]);
   const [eventList, setEventList] = useState([]);
+  const [firstDay, setFirstDay] = useState("");
+  const [lastDay, setLastDay] = useState("");
+
+  let firstTimestamp = ''
+  let lastTimestamp = ''
+
+  if (firstDay){
+    firstTimestamp = (firstDay.getTime())/1000
+    lastTimestamp = (lastDay.getTime())/1000
+  }
 
   function error() {
     console.log("Unable to retrieve your location");
@@ -26,7 +36,7 @@ const Home = () => {
     const location = [lat, lon];
     setLocation(location);
   }
-
+  
   // Geolocation API call
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -34,64 +44,72 @@ const Home = () => {
 
   // API Call to Start.gg
   const graphqlTest = async () => {
-    try {
-      const response = await axios({
-        url: endpoint,
-        method: "post",
-        headers: headers,
-        data: {
-          query: `
-          query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!) {
-            tournaments(query: {
-              perPage: $perPage
-              filter: {
-                afterDate: 1711944000,
-                beforeDate: 1714536000,
-                location: {
-                  distanceFrom: $coordinates,
-                  distance: $radius
+    if (firstTimestamp) {
+      try {
+        const response = await axios({
+          url: endpoint,
+          method: "post",
+          headers: headers,
+          data: {
+            query: `
+            query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!) {
+              tournaments(query: {
+                perPage: $perPage
+                filter: {
+                  afterDate: ${firstTimestamp},
+                  beforeDate: ${lastTimestamp},
+                  location: {
+                    distanceFrom: $coordinates,
+                    distance: $radius
+                  }
+                }
+              }) {
+                nodes {
+                  name
+                  city
+                  venueAddress
+                  startAt
+                  endAt
+                  lat
+                  lng
+                  slug
+                  hasOfflineEvents
                 }
               }
-            }) {
-              nodes {
-                name
-                city
-                venueAddress
-                startAt
-                endAt
-                lat
-                lng
-                slug
-                hasOfflineEvents
-              }
             }
-          }
-          `,
-          variables: {
-            perPage: 100,
-            coordinates: `${location[0]}, ${location[1]}`,
-            radius: "25km",
+            `,
+            variables: {
+              perPage: 100,
+              coordinates: `${location[0]}, ${location[1]}`,
+              radius: "25km",
+            },
           },
-        },
-      });
-      // console.log(response.data.data.tournaments.nodes);
-      setEventList(response.data.data.tournaments.nodes);
-      // console.log(eventList)
-    } catch (error) {
-      console.log(error);
+        });
+        // console.log(response.data.data.tournaments.nodes);
+        setEventList(response.data.data.tournaments.nodes);
+        // console.log(eventList)
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
   useEffect(() => {
     graphqlTest();
-  }, [location]);
+  }, [location, firstTimestamp]);
 
   return (
     <main>
-      <MonthPicker />
+      <select name="searchRadius"></select>
+      <MonthPicker
+        firstDay={firstDay}
+        setFirstDay={setFirstDay}
+        lastDay={lastDay}
+        setLastDay={setLastDay}
+      />
       <div className="contentDiv">
         <Map location={location} eventList={eventList} />
-        <div style={{minWidth: '4%'}}></div>
+        <div style={{ minWidth: "4%" }}></div>
         <EventCalendar eventList={eventList} />
       </div>
     </main>
