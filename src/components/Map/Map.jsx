@@ -25,7 +25,12 @@ const myIcon = new Icon({
 });
 
 const MultipleMarkers = (props) => {
-  // console.log(props.data)
+
+  //todo finish this?
+  const kmRadius = Number((props.radius)*0.621)
+  const mRadius = kmRadius*1000
+  console.log(props.radius)
+
   return props.data.map((item, index) => {
     return (
       <Marker
