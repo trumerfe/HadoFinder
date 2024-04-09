@@ -9,7 +9,7 @@ const DatePicker = () => {
   });
   const [isPickerOpen, setIsPickerOpen] = useState(false);
 
-  console.log(selectedMonthData)
+  // console.log(selectedMonthData)
   
   return (
     <>
@@ -20,7 +20,7 @@ const DatePicker = () => {
           showMonthPicker={isPickerOpen}
         />
         {isPickerOpen ? (
-          <MonthPicker
+          <MonthPicker className='monthPicker'
             setIsOpen={setIsPickerOpen}
             selected={selectedMonthData}
             onChange={setSelectedMonthData}

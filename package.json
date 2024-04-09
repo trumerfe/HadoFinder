@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@aldabil/react-scheduler": "^2.8.4",
     "@date-io/date-fns": "^3.0.0",
     "@date-io/moment": "^3.0.0",
     "@emotion/react": "^11.11.4",
@@ -19,10 +20,19 @@
     "@mui/material": "^5.15.14",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-date-pickers": "^7.0.0",
+    "axios": "^1.6.8",
+    "date-fns": "^3.6.0",
+    "dotenv": "^16.4.5",
+    "leaflet": "^1.9.4",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0",
+    "react-big-calendar": "^1.11.3",
     "react-dom": "^18.2.0",
+    "react-geolocated": "^4.1.2",
+    "react-leaflet": "^4.2.1",
     "react-lite-month-picker": "^1.2.18",
     "react-router-dom": "^6.22.3",
+    "reactjs-popup": "^2.0.6",
     "sass": "^1.72.0",
     "styled-components": "^6.1.8"
   },
