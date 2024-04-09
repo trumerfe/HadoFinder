@@ -27,7 +27,7 @@ iconSize: [30, 30],
 const MultipleMarkers = (props) => {
 
 
-  // console.log(props.data)
+  console.log(props.data)
   return props.data.map((item, index) => {
     return (
       <Marker icon={myIcon} key={index} position={[item.latitude, item.longitude]}>
