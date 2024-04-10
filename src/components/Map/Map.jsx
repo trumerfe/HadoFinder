@@ -19,30 +19,37 @@ import mapIcon from "../../assets/icons/icons8-marker-50.png";
 
 const myIcon = new Icon({
   iconUrl: mapIcon,
-iconSize: [30, 30],
-    iconAnchor: [22, 30],
-    popupAnchor: [-6, -17],// point from which the popup should open relative to the iconAnchor
+  iconSize: [30, 30],
+  iconAnchor: [22, 30],
+  popupAnchor: [-6, -17], // point from which the popup should open relative to the iconAnchor
 });
 
 const MultipleMarkers = (props) => {
-
-
-  console.log(props.data)
   return props.data.map((item, index) => {
+    const d = new Date(item.date)
+    const dateArr = d.toString().split('(')
     return (
-      <Marker icon={myIcon} key={index} position={[item.latitude, item.longitude]}>
-        <Popup>{item.name}</Popup>
+      <Marker
+        icon={myIcon}
+        key={index}
+        position={[item.latitude, item.longitude]}
+      >
+        <Popup>
+          <p>{item.name}</p>
+          <p>{item.address}</p>
+          <p>{dateArr[0]}</p>
+          <a target="blank" href={`https://start.gg/${item.url}`}>{`https://start.gg/${item.url}`}</a>
+        </Popup>
       </Marker>
     );
   });
 };
 
 const Map = (props) => {
-  const mapRef = useRef(null);
+  const kmRadius = Number(props.radius * 1.609);
+  const mRadius = kmRadius * 1000;
 
-  // props.eventList.forEach((element) => {
-  //   console.log(`${element.lat}, ${element.lng}`);
-  // });
+  const mapRef = useRef(null);
 
   const coordsArr = props.eventList.map((x) => ({
     name: x.name,
@@ -51,14 +58,11 @@ const Map = (props) => {
     address: x.venueAddress,
     date: x.startAt,
     url: x.slug,
-    icon: mapIcon
+    icon: mapIcon,
   }));
-
-  // coordsArr[0] ? console.log(coordsArr[0].latitude) : "";
 
   const [latitude, setLatitude] = useState(40);
   const [longitude, setLongitude] = useState(-73);
-  const [latLng, setLatLng] = useState([latitude, longitude]);
 
   const setMyCoords = () => {
     setLatitude(props.location[0]);
@@ -76,7 +80,7 @@ const Map = (props) => {
     // Component from the leaflet react library
     <MapContainer
       center={[10, -10]}
-      zoom={10.5}
+      zoom={9.5}
       ref={mapRef}
       // changes the dimensions of the map component
       style={{
@@ -115,7 +119,7 @@ const Map = (props) => {
           <Circle
             center={[latitude, longitude]}
             pathOptions={fillBlueOptions}
-            radius={25000}
+            radius={mRadius}
           />
         </>
       )}

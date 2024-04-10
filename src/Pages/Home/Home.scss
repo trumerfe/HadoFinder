@@ -19,3 +19,17 @@ main {
   width: 90vw;
   overflow: hidden;
 }
+
+.inputDiv {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90vw;
+
+  &__radiusForm {
+    height: 60.8px;
+    background-color: white;
+    
+    @include labelText;
+    color: black;
+  }
+}
