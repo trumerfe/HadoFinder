@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { MonthPicker, MonthInput } from "react-lite-month-picker";
+import { MonthPicker } from "react-lite-month-picker";
+// moved MonthInput to local so I can edit styles
+import { MonthInput } from './MonthInput/MonthInput.jsx'
 
 const DatePicker = (props) => {
   const date = new Date();

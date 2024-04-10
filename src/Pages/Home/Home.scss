@@ -26,10 +26,25 @@ main {
   width: 90vw;
 
   &__radiusForm {
-    height: 60.8px;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
     background-color: white;
     
     @include labelText;
     color: black;
+  }
+
+  &__radiusLabel {
+    margin-right: 8px;
+  }
+
+  &__reset {
+    height: 44px;
+    border-radius: 5px;
+    @include labelText
   }
 }

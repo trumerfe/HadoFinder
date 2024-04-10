@@ -19,7 +19,7 @@ const Home = () => {
   const [firstDay, setFirstDay] = useState("");
   const [lastDay, setLastDay] = useState("");
   const [radius, setRadius] = useState(25)
-  const [latLon, setLanLon] = useState('')
+  const [gamesFilter, setGamesFilter] = useState(null)
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -54,70 +54,126 @@ const Home = () => {
   // API Call to Start.gg
   const graphqlTest = async () => {
     if (firstTimestamp) {
-      try {
-        const response = await axios({
-          url: endpoint,
-          method: "post",
-          headers: headers,
-          data: {
-            query: `
-            query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!) {
-              tournaments(query: {
-                perPage: $perPage
-                filter: {
-                  afterDate: ${firstTimestamp},
-                  beforeDate: ${lastTimestamp},
-                  location: {
-                    distanceFrom: $coordinates,
-                    distance: $radius
+      if (gamesFilter) {
+        try {
+          const response = await axios({
+            url: endpoint,
+            method: "post",
+            headers: headers,
+            data: {
+              query: `
+              query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!, $videogameId: ID!) {
+                tournaments(query: {
+                  perPage: $perPage
+                  filter: {
+                    afterDate: ${firstTimestamp},
+                    beforeDate: ${lastTimestamp},
+                    videogameIds: [
+                      $videogameId
+                    ],
+                    location: {
+                      distanceFrom: $coordinates,
+                      distance: $radius
+                    }
+                  }
+                }) {
+                  nodes {
+                    name
+                    city
+                    venueAddress
+                    startAt
+                    endAt
+                    lat
+                    lng
+                    slug
+                    hasOfflineEvents
                   }
                 }
-              }) {
-                nodes {
-                  name
-                  city
-                  venueAddress
-                  startAt
-                  endAt
-                  lat
-                  lng
-                  slug
-                  hasOfflineEvents
+              }
+              `,
+              variables: {
+                perPage: 100,
+                coordinates: `${location[0]}, ${location[1]}`,
+                radius: `${radius}mi`,
+                videogameId: gamesFilter
+              },
+            },
+          });
+          setEventList(response.data.data.tournaments.nodes);
+        } catch (error) {
+          console.log(error);
+        }
+      } else {
+        try {
+          const response = await axios({
+            url: endpoint,
+            method: "post",
+            headers: headers,
+            data: {
+              query: `
+              query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!) {
+                tournaments(query: {
+                  perPage: $perPage
+                  filter: {
+                    afterDate: ${firstTimestamp},
+                    beforeDate: ${lastTimestamp},
+                    location: {
+                      distanceFrom: $coordinates,
+                      distance: $radius
+                    }
+                  }
+                }) {
+                  nodes {
+                    name
+                    city
+                    venueAddress
+                    startAt
+                    endAt
+                    lat
+                    lng
+                    slug
+                    hasOfflineEvents
+                  }
                 }
               }
-            }
-            `,
-            variables: {
-              perPage: 100,
-              coordinates: `${location[0]}, ${location[1]}`,
-              radius: `${radius}mi`,
-              // videogameId: 36
+              `,
+              variables: {
+                perPage: 100,
+                coordinates: `${location[0]}, ${location[1]}`,
+                radius: `${radius}mi`,
+              },
             },
-          },
-        });
-        setEventList(response.data.data.tournaments.nodes);
-      } catch (error) {
-        console.log(error);
+          });
+          setEventList(response.data.data.tournaments.nodes);
+        } catch (error) {
+          console.log(error);
+        }
       }
     }
   };
 
   useEffect(() => {
     graphqlTest();
-  }, [location, firstTimestamp, radius]);
+    console.log(gamesFilter)
+  }, [location, firstTimestamp, radius, gamesFilter]);
+
+  const resetSearch = () => {
+    setGamesFilter(null)
+  }
 
   return (
     <main>
       <div className="inputDiv">
         <form className="inputDiv__radiusForm">
-          <label htmlFor="searchRadius">Select search radius: </label>
+          <label className="inputDiv__radiusLabel" htmlFor="searchRadius">Select search radius:</label>
           <select onChange={handleRadiusChange} defaultValue={25} name="radius">
             <option value={10}>10 Miles</option>
             <option value={25}>25 Miles</option>
             <option value={40}>40 Miles</option>
           </select>
         </form>
-        <Search />
+        <Search setGamesFilter={setGamesFilter} />
+        <button onClick={resetSearch} className="inputDiv__reset">Reset Search</button>
         <MonthPicker
           firstDay={firstDay}
           setFirstDay={setFirstDay}

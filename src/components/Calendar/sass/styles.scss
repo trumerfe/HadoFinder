@@ -1,6 +1,8 @@
+@use '../../../partials/mixins' as *;
 @import './variables';
 @import './reset';
 @import '../../../partials/variables';
+
 
 article {
   max-width: 100%;
@@ -17,6 +19,9 @@ article {
   align-items: stretch;
   background-color: white;
   z-index: 2;
+  // font-family: 'trueno', Courier, monospace;
+
+  // @include labelText
 }
 
 .rbc-calendar *,

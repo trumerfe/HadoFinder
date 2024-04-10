@@ -1,39 +1,24 @@
 import React, { useEffect } from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import axios from "axios";
-import cors from 'cors'
-import games from '../../assets/data/games.json'
+import cors from 'cors';
+import games from '../../assets/data/games.json';
+import test from '../../assets/data/new.json'
 
-const Search = () => {
-
-  // console.log(games)
-
-  const handleOnSearch = (string, results) => {
-    // onSearch will have as the first callback parameter
-    // the string searched and for the second the results.
-    console.log(string, results);
-  };
-
-  const handleOnHover = (result) => {
-    // the item hovered
-    console.log(result);
-  };
+const Search = (props) => {
 
   const handleOnSelect = (item) => {
-    // the item selected
-    console.log(item);
-  };
-
-  const handleOnFocus = () => {
-    console.log("Focused");
+    if (item.id){
+      props.setGamesFilter(item.id)
+    } else {
+      const gameId = (test.filter((x) => x.name === item.toUpperCase()))
+      props.setGamesFilter(gameId[0].id)
+    }
   };
 
   const formatResult = (item) => {
     return (
       <>
-        {/* <span style={{ display: "block", textAlign: "left" }}>
-          id: {item.id}
-        </span> */}
         <span style={{ display: "block", textAlign: "left" }}>
           {item.name}
         </span>
@@ -42,13 +27,11 @@ const Search = () => {
   };
 
   return (
-    <div style={{width: 400, zIndex: 6}}>
+    <div style={{width: 400, zIndex: 6, fontFamily: 'Roboto', fontSize: '1.4rem'}}>
       <ReactSearchAutocomplete
-        items={games}
-        onSearch={handleOnSearch}
-        onHover={handleOnHover}
+        items={test}
+        onSearch={handleOnSelect}
         onSelect={handleOnSelect}
-        onFocus={handleOnFocus}
         autoFocus
         formatResult={formatResult}
       />
