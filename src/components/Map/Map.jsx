@@ -45,6 +45,19 @@ const MultipleMarkers = (props) => {
   });
 };
 
+const MapEvents = (props) => {
+  useMapEvents({
+    click(e) {
+      console.log(e.latlng.lat)
+      props.setLatitude(e.latlng.lat)
+      console.log(e.latlng.lng)
+      props.setLongitude(e.latlng.lng)
+      props.setLocation([e.latlng.lat, e.latlng.lng])
+    }
+  })
+  return false
+}
+
 const Map = (props) => {
   const kmRadius = Number(props.radius * 1.609);
   const mRadius = kmRadius * 1000;
@@ -123,6 +136,7 @@ const Map = (props) => {
           />
         </>
       )}
+      <MapEvents setLatitude={setLatitude} setLongitude={setLongitude} setLocation={props.setLocation} />
     </MapContainer>
   );
 };

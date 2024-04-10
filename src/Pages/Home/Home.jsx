@@ -18,6 +18,7 @@ const Home = () => {
   const [firstDay, setFirstDay] = useState("");
   const [lastDay, setLastDay] = useState("");
   const [radius, setRadius] = useState(25)
+  const [latLon, setLanLon] = useState('')
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -34,8 +35,9 @@ const Home = () => {
   function success(position) {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
-    const location = [lat, lon];
-    setLocation(location);
+    const locationVar = [lat, lon];
+    // setLanLon(location)
+    setLocation(locationVar);
   }
 
   // Geolocation API call
@@ -121,7 +123,7 @@ const Home = () => {
         />
       </div>
       <div className="contentDiv">
-        <Map location={location} eventList={eventList} radius={radius} />
+        <Map location={location} setLocation={setLocation} eventList={eventList} radius={radius} />
         <div style={{ minWidth: "4%" }}></div>
         <EventCalendar eventList={eventList} />
       </div>
