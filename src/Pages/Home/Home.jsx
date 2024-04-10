@@ -4,6 +4,7 @@ import Map from "../../components/Map/Map";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import EventCalendar from "../../components/Calendar/Calendar";
+import Search from "../../components/Search/Search";
 
 // .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
@@ -90,6 +91,7 @@ const Home = () => {
               perPage: 100,
               coordinates: `${location[0]}, ${location[1]}`,
               radius: `${radius}mi`,
+              // videogameId: 36
             },
           },
         });
@@ -115,6 +117,7 @@ const Home = () => {
             <option value={40}>40 Miles</option>
           </select>
         </form>
+        <Search />
         <MonthPicker
           firstDay={firstDay}
           setFirstDay={setFirstDay}

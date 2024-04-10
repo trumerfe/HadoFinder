@@ -26,7 +26,7 @@ const myIcon = new Icon({
 
 const MultipleMarkers = (props) => {
   return props.data.map((item, index) => {
-    const d = new Date(item.date)
+    const d = new Date((item.date)*1000)
     const dateArr = d.toString().split('(')
     return (
       <Marker

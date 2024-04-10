@@ -123,7 +123,7 @@ Step 6 - Styling:
 * Authentication feature so users can save their locations.
 * Filtering tournaments by games.
 * Filtering tournaments by date range as opposed to month.
-* Letting users adjust distance radius of tournaments shown.
+* Letting users adjust distance radius of tournaments shown. (Done)
 * Showing region-locked online tournaments.
-* Allowing users to search for tournaments in other areas.
+* Allowing users to search for tournaments in other areas. (Done)
 * Selecting a tournament in the calendar highlights said event in the map.

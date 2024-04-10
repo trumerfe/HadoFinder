@@ -1,0 +1,1602 @@
+[
+    {
+        "id": 2091,
+        "name": "EXCEED: Fighting System"
+    },
+    {
+        "id": 4821,
+        "name": "Halo: Reach"
+    },
+    {
+        "id": 4842,
+        "name": "Tekken"
+    },
+    {
+        "id": 5188,
+        "name": "Tekken Tag Tournament"
+    },
+    {
+        "id": 5998,
+        "name": "Tetris Attack"
+    },
+    {
+        "id": 7029,
+        "name": "Power Stone"
+    },
+    {
+        "id": 7333,
+        "name": "Saturday Night Slam Masters"
+    },
+    {
+        "id": 10519,
+        "name": "Cyber Troopers Virtual-On Oratorio Tangram"
+    },
+    {
+        "id": 13438,
+        "name": "Sonic Mania"
+    },
+    {
+        "id": 13489,
+        "name": "Cartoon Network: Punch Time Explosion XL"
+    },
+    {
+        "id": 13668,
+        "name": "NeoGeo Battle Coliseum"
+    },
+    {
+        "id": 16109,
+        "name": "Street Fighter II: Champion Edition"
+    },
+    {
+        "id": 21274,
+        "name": "MY HERO ONE'S JUSTICE"
+    },
+    {
+        "id": 22034,
+        "name": "Trivia"
+    },
+    {
+        "id": 22389,
+        "name": "Hyper Dragon Ball Z"
+    },
+    {
+        "id": 22999,
+        "name": "Star Citizen"
+    },
+    {
+        "id": 34129,
+        "name": "Mobile Suit Gundam: Extreme Vs. Maxi Boost On"
+    },
+    {
+        "id": 34602,
+        "name": "Kingdom Hearts: Melody of Memory"
+    },
+    {
+        "id": 35468,
+        "name": "League of Legends: Wild Rift"
+    },
+    {
+        "id": 35748,
+        "name": "Initial D Arcade Stage 8 Infinity ∞"
+    },
+    {
+        "id": 37165,
+        "name": "Teenage Mutant Ninja Turtles: Tournament Fighters"
+    },
+    {
+        "id": 39821,
+        "name": "NAIR"
+    },
+    {
+        "id": 40156,
+        "name": "Sonic Riders DX"
+    },
+    {
+        "id": 44495,
+        "name": "FIFA 23"
+    },
+    {
+        "id": 47531,
+        "name": "Shijou Saikyou No Deshi Kenichi: Gekitou! Ragnarok Hachikengou"
+    },
+    {
+        "id": 48895,
+        "name": "Just Dance 2024 Edition"
+    },
+    {
+        "id": 4514,
+        "name": "Star Wars: Jedi Knight - Jedi Academy"
+    },
+    {
+        "id": 4869,
+        "name": "Kingdom Hearts Birth by Sleep"
+    },
+    {
+        "id": 6218,
+        "name": "Mario Golf: Toadstool Tour"
+    },
+    {
+        "id": 22307,
+        "name": "Basketball"
+    },
+    {
+        "id": 22401,
+        "name": "Umineko: Golden Fantasia"
+    },
+    {
+        "id": 23519,
+        "name": "Counter-Strike 1.6"
+    },
+    {
+        "id": 24969,
+        "name": "Little Fighter 2"
+    },
+    {
+        "id": 33582,
+        "name": "HYPERFIGHT Max Battle"
+    },
+    {
+        "id": 33669,
+        "name": "Breakers Revenge"
+    },
+    {
+        "id": 33823,
+        "name": "Call of Duty: Mobile"
+    },
+    {
+        "id": 33834,
+        "name": "StepmaniaX"
+    },
+    {
+        "id": 39710,
+        "name": "Call of Duty: Vanguard"
+    },
+    {
+        "id": 41409,
+        "name": "Table Soccer Foosball"
+    },
+    {
+        "id": 42696,
+        "name": "Gundam Evolution"
+    },
+    {
+        "id": 43438,
+        "name": "Call of Duty: Modern Warfare II"
+    },
+    {
+        "id": 45885,
+        "name": "Project Balas"
+    },
+    {
+        "id": 49177,
+        "name": "Buriki One"
+    },
+    {
+        "id": 56064,
+        "name": "Areena 5"
+    },
+    {
+        "id": 64293,
+        "name": "Streets of Fury EX"
+    },
+    {
+        "id": 2930,
+        "name": "DANCERUSH STARDOM"
+    },
+    {
+        "id": 5489,
+        "name": "Tobal 2"
+    },
+    {
+        "id": 5682,
+        "name": "Mario Kart 64"
+    },
+    {
+        "id": 7128,
+        "name": "Rocky"
+    },
+    {
+        "id": 7252,
+        "name": "Sonic Heroes"
+    },
+    {
+        "id": 11017,
+        "name": "Dark Souls III"
+    },
+    {
+        "id": 11821,
+        "name": "plasma Sword: Nightmare of Bilstein"
+    },
+    {
+        "id": 13110,
+        "name": "Darkstalkers Resurrection"
+    },
+    {
+        "id": 13897,
+        "name": "Melty Blood: Actress Again"
+    },
+    {
+        "id": 22324,
+        "name": "Judo"
+    },
+    {
+        "id": 25226,
+        "name": "Liero"
+    },
+    {
+        "id": 28893,
+        "name": "Granblue Fantasy: Relink"
+    },
+    {
+        "id": 33726,
+        "name": "Fist of the North Star"
+    },
+    {
+        "id": 35714,
+        "name": "Tough Love Arena"
+    },
+    {
+        "id": 37185,
+        "name": "Touhou Hyouibana ～ Antinomy of Common Flowers"
+    },
+    {
+        "id": 56252,
+        "name": "People Playground"
+    },
+    {
+        "id": 57639,
+        "name": "The Finals"
+    },
+    {
+        "id": 59879,
+        "name": "M.U.G.E.N"
+    },
+    {
+        "id": 22,
+        "name": "Mortal Kombat X"
+    },
+    {
+        "id": 3414,
+        "name": "Custom Robo: Battle Revolution"
+    },
+    {
+        "id": 6240,
+        "name": "Puzzle Bobble 2"
+    },
+    {
+        "id": 7231,
+        "name": "Digimon Rumble Arena"
+    },
+    {
+        "id": 9968,
+        "name": "Marvel vs. Capcom: Clash of Super Heroes"
+    },
+    {
+        "id": 10486,
+        "name": "Worms: Ultimate Mayhem"
+    },
+    {
+        "id": 10550,
+        "name": "We Happy Few"
+    },
+    {
+        "id": 10905,
+        "name": "Shrek SuperSlam"
+    },
+    {
+        "id": 11959,
+        "name": "Mount Your Friends"
+    },
+    {
+        "id": 14973,
+        "name": "Saturn Bomberman"
+    },
+    {
+        "id": 15000,
+        "name": "Cars 3: Driven to Win"
+    },
+    {
+        "id": 20381,
+        "name": "Warhammer: Vermintide 2"
+    },
+    {
+        "id": 21258,
+        "name": "Naruto: Gekitō Ninja Taisen! 4"
+    },
+    {
+        "id": 33670,
+        "name": "Akatsuki Blitzkampf: Ausf Achse"
+    },
+    {
+        "id": 33921,
+        "name": "Garfield Kart: Furious Racing"
+    },
+    {
+        "id": 36038,
+        "name": "SOUND VOLTEX EXCEED GEAR"
+    },
+    {
+        "id": 37464,
+        "name": "Jeopardy!"
+    },
+    {
+        "id": 45396,
+        "name": "Kinnikuman Muscle Grand Prix 2"
+    },
+    {
+        "id": 48514,
+        "name": "Naruto x Boruto: Ultimate Ninja Storm Connections"
+    },
+    {
+        "id": 49108,
+        "name": "WarioWare: Move It!"
+    },
+    {
+        "id": 50437,
+        "name": "Wonderful World"
+    },
+    {
+        "id": 64052,
+        "name": "Pokémon Trading Card Game Live"
+    },
+    {
+        "id": 29,
+        "name": "Super Smash Bros. for 3DS"
+    },
+    {
+        "id": 2650,
+        "name": "Team Fortress 2"
+    },
+    {
+        "id": 5957,
+        "name": "Guitar Hero III: Legends of Rock"
+    },
+    {
+        "id": 9468,
+        "name": "NCAA Basketball 10"
+    },
+    {
+        "id": 9704,
+        "name": "Sonic Adventure 2: Battle"
+    },
+    {
+        "id": 10199,
+        "name": "Shaq-Fu"
+    },
+    {
+        "id": 11844,
+        "name": "The King of Fighters '97"
+    },
+    {
+        "id": 21226,
+        "name": "Spelunky 2"
+    },
+    {
+        "id": 22337,
+        "name": "Tag"
+    },
+    {
+        "id": 23340,
+        "name": "Temple Run"
+    },
+    {
+        "id": 24473,
+        "name": "Ricochet"
+    },
+    {
+        "id": 34558,
+        "name": "Dance Dance Revolution A20"
+    },
+    {
+        "id": 34766,
+        "name": "Call of Duty: Black Ops Cold War"
+    },
+    {
+        "id": 41122,
+        "name": "Cabin Fever"
+    },
+    {
+        "id": 42119,
+        "name": "Pure Mini Golf"
+    },
+    {
+        "id": 44195,
+        "name": "Super Street Fighter II Turbo: New Legacy"
+    },
+    {
+        "id": 49630,
+        "name": "GamePigeon: Word Hunt"
+    },
+    {
+        "id": 50662,
+        "name": "Beatmania IIDX 31 Epolis"
+    },
+    {
+        "id": 65852,
+        "name": "Combo Devils"
+    },
+    {
+        "id": 88,
+        "name": "Brawlout"
+    },
+    {
+        "id": 3315,
+        "name": "Super Mario Odyssey"
+    },
+    {
+        "id": 5877,
+        "name": "Super Monkey Ball"
+    },
+    {
+        "id": 5968,
+        "name": "Dragon Ball Z: Super Butōden 2"
+    },
+    {
+        "id": 6318,
+        "name": "Buck Bumble"
+    },
+    {
+        "id": 6545,
+        "name": "Kirby: Squeak Squad"
+    },
+    {
+        "id": 7667,
+        "name": "Divekick"
+    },
+    {
+        "id": 9501,
+        "name": "Tony Hawk's American Wasteland"
+    },
+    {
+        "id": 10054,
+        "name": "Dead or Alive 5: Last Round"
+    },
+    {
+        "id": 13170,
+        "name": "Darkstalkers: The Night Warriors"
+    },
+    {
+        "id": 13362,
+        "name": "Super Puzzle Fighter II Turbo"
+    },
+    {
+        "id": 14198,
+        "name": "Dissidia 012: Duodecim Final Fantasy"
+    },
+    {
+        "id": 14213,
+        "name": "Nidhogg 2"
+    },
+    {
+        "id": 17734,
+        "name": "Street Fighter EX 2 Plus"
+    },
+    {
+        "id": 22319,
+        "name": "Fencing"
+    },
+    {
+        "id": 23522,
+        "name": "osu!"
+    },
+    {
+        "id": 42286,
+        "name": "Nintendo Switch Sports"
+    },
+    {
+        "id": 45563,
+        "name": "Pingu no Waku-waku Carnival"
+    },
+    {
+        "id": 46577,
+        "name": "The King of Fighters: Maximum Impact Regulation \"A\""
+    },
+    {
+        "id": 50032,
+        "name": "F-Zero 99"
+    },
+    {
+        "id": 50344,
+        "name": "Suika Game"
+    },
+    {
+        "id": 56097,
+        "name": "Touhou Fractured Transience"
+    },
+    {
+        "id": 856,
+        "name": "Mortal Kombat 9"
+    },
+    {
+        "id": 3313,
+        "name": "Super Mario 64"
+    },
+    {
+        "id": 4852,
+        "name": "Bushido Blade"
+    },
+    {
+        "id": 5679,
+        "name": "Mario Party 6"
+    },
+    {
+        "id": 7621,
+        "name": "Link's Crossbow Training"
+    },
+    {
+        "id": 7837,
+        "name": "Skylanders: Swap Force"
+    },
+    {
+        "id": 9817,
+        "name": "Sonic Adventure 2"
+    },
+    {
+        "id": 15403,
+        "name": "Love Live! School idol paradise Vol.2 BiBi Unit"
+    },
+    {
+        "id": 17708,
+        "name": "Street Fighter EX Plus"
+    },
+    {
+        "id": 33847,
+        "name": "Clone Hero"
+    },
+    {
+        "id": 33990,
+        "name": "Street Fighter V: Champion Edition"
+    },
+    {
+        "id": 37619,
+        "name": "Astro Bears"
+    },
+    {
+        "id": 44682,
+        "name": "beatmania IIDX 30 Resident"
+    },
+    {
+        "id": 47046,
+        "name": "Mega Man Battle Network Legacy Collection"
+    },
+    {
+        "id": 62577,
+        "name": "Yatagarasu Enter the Eastward"
+    },
+    {
+        "id": 288,
+        "name": "Marvel vs. Capcom: Infinite"
+    },
+    {
+        "id": 4700,
+        "name": "Grand Theft Auto IV"
+    },
+    {
+        "id": 4770,
+        "name": "Street Fighter IV"
+    },
+    {
+        "id": 5122,
+        "name": "Ehrgeiz"
+    },
+    {
+        "id": 5216,
+        "name": "Tekken 3"
+    },
+    {
+        "id": 6928,
+        "name": "Frogger's Adventures: The Rescue"
+    },
+    {
+        "id": 8499,
+        "name": "The King of Fighters 2002"
+    },
+    {
+        "id": 11350,
+        "name": "Fate/unlimited codes"
+    },
+    {
+        "id": 12353,
+        "name": "Ultimate Chicken Horse"
+    },
+    {
+        "id": 14402,
+        "name": "Tetris: The Grand Master"
+    },
+    {
+        "id": 15457,
+        "name": "Love Live! School idol paradise Vol.1 Printemps Unit"
+    },
+    {
+        "id": 22404,
+        "name": "Koihime Enbu RyoRaiRai"
+    },
+    {
+        "id": 33519,
+        "name": "Persona 5 Scramble: The Phantom Strikers"
+    },
+    {
+        "id": 33664,
+        "name": "Cosplay Competition"
+    },
+    {
+        "id": 34453,
+        "name": "Mega Man Arena"
+    },
+    {
+        "id": 48515,
+        "name": "Sumorbit"
+    },
+    {
+        "id": 63775,
+        "name": "Aimlabs"
+    },
+    {
+        "id": 65629,
+        "name": "Duelists of Eden"
+    },
+    {
+        "id": 2275,
+        "name": "Guilty Gear XX Accent Core +R"
+    },
+    {
+        "id": 4877,
+        "name": "Golden Sun: Dark Dawn"
+    },
+    {
+        "id": 4985,
+        "name": "Tekken Tag Tournament 2"
+    },
+    {
+        "id": 6446,
+        "name": "F-Zero GX"
+    },
+    {
+        "id": 6969,
+        "name": "Super Street Fighter II Turbo"
+    },
+    {
+        "id": 12398,
+        "name": "Bloody Roar Extreme"
+    },
+    {
+        "id": 22310,
+        "name": "Billiards"
+    },
+    {
+        "id": 33628,
+        "name": "Footsies"
+    },
+    {
+        "id": 45018,
+        "name": "The Wheel"
+    },
+    {
+        "id": 61723,
+        "name": "WWE 2K24"
+    },
+    {
+        "id": 66824,
+        "name": "BlindSight: Event Zero"
+    },
+    {
+        "id": 20,
+        "name": "Splatoon"
+    },
+    {
+        "id": 1862,
+        "name": "Magic the Gathering"
+    },
+    {
+        "id": 4340,
+        "name": "Call of Duty: Black Ops 3"
+    },
+    {
+        "id": 5662,
+        "name": "Pokémon Stadium 2"
+    },
+    {
+        "id": 5700,
+        "name": "Pikmin 3"
+    },
+    {
+        "id": 6638,
+        "name": "Godzilla: Destroy All Monsters Melee"
+    },
+    {
+        "id": 7308,
+        "name": "Monster Rancher 2"
+    },
+    {
+        "id": 8320,
+        "name": "Nidhogg"
+    },
+    {
+        "id": 14419,
+        "name": "Tetris the Absolute: The Grand Master 2"
+    },
+    {
+        "id": 16391,
+        "name": "Samurai Shodown V Special"
+    },
+    {
+        "id": 18035,
+        "name": "Fantasy Strike"
+    },
+    {
+        "id": 21850,
+        "name": "Kill la Kill the Game: If"
+    },
+    {
+        "id": 22397,
+        "name": "Catherine: Full Body"
+    },
+    {
+        "id": 30180,
+        "name": "Cyberbots: Fullmetal Madness"
+    },
+    {
+        "id": 33882,
+        "name": "Touhou Hisotensoku"
+    },
+    {
+        "id": 36942,
+        "name": "Boomerang Fu"
+    },
+    {
+        "id": 38380,
+        "name": "Stick Fight: The Game"
+    },
+    {
+        "id": 39241,
+        "name": "Asuka 120% LimitOver BURNING Fest"
+    },
+    {
+        "id": 48839,
+        "name": "Madden NFL 24"
+    },
+    {
+        "id": 33,
+        "name": "Windjammers"
+    },
+    {
+        "id": 3314,
+        "name": "Mario Kart: Double Dash!!"
+    },
+    {
+        "id": 5229,
+        "name": "Street Fighter X Tekken"
+    },
+    {
+        "id": 5665,
+        "name": "Mario Party 8"
+    },
+    {
+        "id": 5761,
+        "name": "Dragon Ball Z: Budokai Tenkaichi 3"
+    },
+    {
+        "id": 7208,
+        "name": "Gex"
+    },
+    {
+        "id": 18974,
+        "name": "Fun House"
+    },
+    {
+        "id": 23618,
+        "name": "Cookie Clicker"
+    },
+    {
+        "id": 29412,
+        "name": "Melty Blood: Act Cadenza Ver. B"
+    },
+    {
+        "id": 33913,
+        "name": "Yu-Gi-Oh!"
+    },
+    {
+        "id": 50630,
+        "name": "Touhou 19 - Unfinished Dream of All Living Ghost"
+    },
+    {
+        "id": 2908,
+        "name": "In The Groove 2"
+    },
+    {
+        "id": 21259,
+        "name": "Naruto Shippūden: Gekitō Ninja Taisen! Special"
+    },
+    {
+        "id": 21388,
+        "name": "Samurai Shodown V Special (ARCADE)"
+    },
+    {
+        "id": 28911,
+        "name": "Uno"
+    },
+    {
+        "id": 38816,
+        "name": "Just Dance 2022"
+    },
+    {
+        "id": 40849,
+        "name": "MultiVersus"
+    },
+    {
+        "id": 10580,
+        "name": "SpeedRunners"
+    },
+    {
+        "id": 12988,
+        "name": "Night Warriors: Darkstalkers' Revenge"
+    },
+    {
+        "id": 33500,
+        "name": "Mario & Sonic at the Tokyo 2020 Olympic Games"
+    },
+    {
+        "id": 34156,
+        "name": "Sonic Smackdown"
+    },
+    {
+        "id": 36403,
+        "name": "JoJo's Heritage for the Future"
+    },
+    {
+        "id": 54343,
+        "name": "Thwack"
+    },
+    {
+        "id": 5647,
+        "name": "Mario Party 4"
+    },
+    {
+        "id": 6553,
+        "name": "Def Jam: Fight for NY"
+    },
+    {
+        "id": 9990,
+        "name": "Happy Wars"
+    },
+    {
+        "id": 14913,
+        "name": "ACA NEOGEO NEO TURF MASTERS"
+    },
+    {
+        "id": 45180,
+        "name": "Pikmin 4"
+    },
+    {
+        "id": 12,
+        "name": "Counter Strike: Global Offensive"
+    },
+    {
+        "id": 8691,
+        "name": "Ape Escape 2"
+    },
+    {
+        "id": 9690,
+        "name": "The King of Fighters XIII"
+    },
+    {
+        "id": 17934,
+        "name": "Advanced V.G. 2"
+    },
+    {
+        "id": 18747,
+        "name": "Camping Mama: Outdoor Adventures"
+    },
+    {
+        "id": 34047,
+        "name": "TWINKLE STAR SPRITES"
+    },
+    {
+        "id": 49766,
+        "name": "NHL 24"
+    },
+    {
+        "id": 9027,
+        "name": "Bust a Move 4"
+    },
+    {
+        "id": 21839,
+        "name": "Jump Force"
+    },
+    {
+        "id": 33870,
+        "name": "Under Night In-Birth Exe:Late[cl-r]"
+    },
+    {
+        "id": 35504,
+        "name": "RPS play"
+    },
+    {
+        "id": 64443,
+        "name": "Apeiron"
+    },
+    {
+        "id": 12953,
+        "name": "Street Fighter: The Movie"
+    },
+    {
+        "id": 14398,
+        "name": "Red Dead Redemption 2"
+    },
+    {
+        "id": 14740,
+        "name": "Yo-Kai Watch 2: Psychic Specters"
+    },
+    {
+        "id": 22403,
+        "name": "Ultra Fight Da Kyanta 2"
+    },
+    {
+        "id": 34656,
+        "name": "MOBILE SUIT GUNDAM EXTREME VS. MAXIBOOST ON"
+    },
+    {
+        "id": 6701,
+        "name": "NBA Showtime: NBA on NBC"
+    },
+    {
+        "id": 7009,
+        "name": "Sonic Riders"
+    },
+    {
+        "id": 21284,
+        "name": "The Last Blade 2"
+    },
+    {
+        "id": 33637,
+        "name": "DanceDanceRevolution A20"
+    },
+    {
+        "id": 42285,
+        "name": "Mario Strikers: Battle League"
+    },
+    {
+        "id": 57191,
+        "name": "Mafia Online"
+    },
+    {
+        "id": 6030,
+        "name": "Dragon Ball Z: Budokai 3"
+    },
+    {
+        "id": 47026,
+        "name": "Marvel Snap"
+    },
+    {
+        "id": 3589,
+        "name": "Puyo Puyo Tetris"
+    },
+    {
+        "id": 42738,
+        "name": "Chaos Breaker"
+    },
+    {
+        "id": 66123,
+        "name": "CookieRun: Braverse TCG"
+    },
+    {
+        "id": 22398,
+        "name": "Minion Masters"
+    },
+    {
+        "id": 22408,
+        "name": "Tatsunoko VS. Capcom: Ultimate All Stars"
+    },
+    {
+        "id": 44288,
+        "name": "Kamen Rider: Super Climax Heroes"
+    },
+    {
+        "id": 5690,
+        "name": "Mario Strikers Charged"
+    },
+    {
+        "id": 6660,
+        "name": "Mario Superstar Baseball"
+    },
+    {
+        "id": 22156,
+        "name": "Power Rangers: Battle for the Grid"
+    },
+    {
+        "id": 42273,
+        "name": "Chunithm New"
+    },
+    {
+        "id": 49234,
+        "name": "Pump it Up Phoenix"
+    },
+    {
+        "id": 49385,
+        "name": "Pokemon Trading Card Game Live"
+    },
+    {
+        "id": 2765,
+        "name": "Super Mario Party"
+    },
+    {
+        "id": 5757,
+        "name": "Mario Kart Wii"
+    },
+    {
+        "id": 44305,
+        "name": "Initial D Arcade Stage Zero"
+    },
+    {
+        "id": 1756,
+        "name": "Tom Clancy's Rainbow Six Siege"
+    },
+    {
+        "id": 21835,
+        "name": "Tetris Effect: Connected"
+    },
+    {
+        "id": 3139,
+        "name": "Dead or Alive 6"
+    },
+    {
+        "id": 3742,
+        "name": "Marvel Vs. Capcom 2"
+    },
+    {
+        "id": 10838,
+        "name": "Garou: Mark of the Wolves"
+    },
+    {
+        "id": 22107,
+        "name": "Granblue Fantasy: Versus"
+    },
+    {
+        "id": 45262,
+        "name": "Geoguessr"
+    },
+    {
+        "id": 48368,
+        "name": "Idol Showdown"
+    },
+    {
+        "id": 50033,
+        "name": "Wargroove 2"
+    },
+    {
+        "id": 1150,
+        "name": "Them's Fightin' Herds"
+    },
+    {
+        "id": 11577,
+        "name": "Project Justice"
+    },
+    {
+        "id": 21953,
+        "name": "Windjammers 2"
+    },
+    {
+        "id": 56432,
+        "name": "Illuvium"
+    },
+    {
+        "id": 30,
+        "name": "StarCraft II: Legacy of the Void"
+    },
+    {
+        "id": 120,
+        "name": "Pokemon Showdown"
+    },
+    {
+        "id": 11936,
+        "name": "The King of Fighters '98"
+    },
+    {
+        "id": 47506,
+        "name": "Virtua Fighter 3tb"
+    },
+    {
+        "id": 1864,
+        "name": "Dragon Ball Super Card Game"
+    },
+    {
+        "id": 1969,
+        "name": "Slap City"
+    },
+    {
+        "id": 9012,
+        "name": "Street Fighter Alpha 3"
+    },
+    {
+        "id": 9219,
+        "name": "Street Fighter Alpha 2"
+    },
+    {
+        "id": 39490,
+        "name": "Wacca Reverse"
+    },
+    {
+        "id": 343,
+        "name": "Pokemon TCG"
+    },
+    {
+        "id": 10055,
+        "name": "Street Fighter V"
+    },
+    {
+        "id": 865,
+        "name": "Halo 5: Guardians"
+    },
+    {
+        "id": 45214,
+        "name": "Call of Duty: Warzone 2.0"
+    },
+    {
+        "id": 22340,
+        "name": "Volleyball"
+    },
+    {
+        "id": 12860,
+        "name": "Naruto Shippûden: Clash of Ninja Revolution 3"
+    },
+    {
+        "id": 38039,
+        "name": "Virtua Fighter 5 Ultimate Showdown"
+    },
+    {
+        "id": 37022,
+        "name": "Fraymakers"
+    },
+    {
+        "id": 5618,
+        "name": "Wii Sports Resort"
+    },
+    {
+        "id": 33594,
+        "name": "Teamfight Tactics"
+    },
+    {
+        "id": 44865,
+        "name": "DanceDanceRevolution A3"
+    },
+    {
+        "id": 4267,
+        "name": "Dengeki Bunko: Fighting Climax Ignition"
+    },
+    {
+        "id": 16346,
+        "name": "Jackie Chan in Fists of Fire"
+    },
+    {
+        "id": 47741,
+        "name": "Maimai DX Festival"
+    },
+    {
+        "id": 447,
+        "name": "Pokkén Tournament DX"
+    },
+    {
+        "id": 34397,
+        "name": "Tetr.io"
+    },
+    {
+        "id": 38930,
+        "name": "Mario Party Superstars"
+    },
+    {
+        "id": 2,
+        "name": "Project M"
+    },
+    {
+        "id": 39281,
+        "name": "Nickelodeon All-Star Brawl"
+    },
+    {
+        "id": 30026,
+        "name": "Kingdom Hearts II: Final Mix+"
+    },
+    {
+        "id": 57296,
+        "name": "Coin Flipper"
+    },
+    {
+        "id": 52555,
+        "name": "Stormgate"
+    },
+    {
+        "id": 35665,
+        "name": "Puyo Puyo Tetris 2"
+    },
+    {
+        "id": 3200,
+        "name": "Mortal Kombat 11"
+    },
+    {
+        "id": 42868,
+        "name": "Turbo Golf Racing"
+    },
+    {
+        "id": 1465,
+        "name": "Chess"
+    },
+    {
+        "id": 40056,
+        "name": "Among Us Arena"
+    },
+    {
+        "id": 48637,
+        "name": "One Piece Card Game"
+    },
+    {
+        "id": 3465,
+        "name": "Apex Legends"
+    },
+    {
+        "id": 46661,
+        "name": "Riichi City"
+    },
+    {
+        "id": 5685,
+        "name": "Wii Sports"
+    },
+    {
+        "id": 5764,
+        "name": "Super Mario Strikers"
+    },
+    {
+        "id": 33977,
+        "name": "KartRider Drift"
+    },
+    {
+        "id": 55308,
+        "name": "Ultra Fight Da! Kyanta 2"
+    },
+    {
+        "id": 56923,
+        "name": "Your Only Move is Hustle (DUPE)"
+    },
+    {
+        "id": 10087,
+        "name": "Tetris"
+    },
+    {
+        "id": 33829,
+        "name": "Mobile Legends: Bang Bang"
+    },
+    {
+        "id": 39,
+        "name": "Capcom vs. SNK 2"
+    },
+    {
+        "id": 24362,
+        "name": "Halo: The Master Chief Collection"
+    },
+    {
+        "id": 34991,
+        "name": "Food Girls"
+    },
+    {
+        "id": 49229,
+        "name": "NBA 2K24"
+    },
+    {
+        "id": 35678,
+        "name": "Other"
+    },
+    {
+        "id": 49729,
+        "name": "Call of Duty: Modern Warfare III"
+    },
+    {
+        "id": 19,
+        "name": "Killer Instinct"
+    },
+    {
+        "id": 4453,
+        "name": "Minecraft"
+    },
+    {
+        "id": 45331,
+        "name": "Pokemon Scarlet/Pokemon Violet"
+    },
+    {
+        "id": 50149,
+        "name": "UNDER NIGHT IN-BIRTH II Sys:Celes"
+    },
+    {
+        "id": 39100,
+        "name": "Demon Slayer: Kimetsu no Yaiba - The Hikonami Chronicles"
+    },
+    {
+        "id": 43455,
+        "name": "Flash Party"
+    },
+    {
+        "id": 9881,
+        "name": "Sonic The Fighters"
+    },
+    {
+        "id": 12151,
+        "name": "ROBLOX"
+    },
+    {
+        "id": 16,
+        "name": "Ultra Street Fighter IV"
+    },
+    {
+        "id": 35218,
+        "name": "Super Naruto Clash of Ninja 4"
+    },
+    {
+        "id": 5582,
+        "name": "SoulCalibur II"
+    },
+    {
+        "id": 17,
+        "name": "TEKKEN 7"
+    },
+    {
+        "id": 2868,
+        "name": "Lethal League Blaze"
+    },
+    {
+        "id": 44158,
+        "name": "JoJo’s Bizarre Adventure: All-Star Battle R"
+    },
+    {
+        "id": 33588,
+        "name": "YuGiOh the Trading Card Game"
+    },
+    {
+        "id": 16904,
+        "name": "Bishoujo Senshi Sailor Moon S: Juugai Rantou!? Shuyaku Soudatsusen"
+    },
+    {
+        "id": 39478,
+        "name": "Smash Remix"
+    },
+    {
+        "id": 3536,
+        "name": "Super Smash Flash 2"
+    },
+    {
+        "id": 22407,
+        "name": "Melty Blood Actress Again Current Code"
+    },
+    {
+        "id": 22336,
+        "name": "Table Tennis"
+    },
+    {
+        "id": 45738,
+        "name": "Age of Empires IV"
+    },
+    {
+        "id": 33592,
+        "name": "Beyblade (IRL)"
+    },
+    {
+        "id": 611,
+        "name": "Super Street Fighter II Turbo"
+    },
+    {
+        "id": 3568,
+        "name": "SAMURAI SHODOWN"
+    },
+    {
+        "id": 39802,
+        "name": "eFootball"
+    },
+    {
+        "id": 28,
+        "name": "Rock Paper Scissors"
+    },
+    {
+        "id": 904,
+        "name": "SOULCALIBUR VI"
+    },
+    {
+        "id": 1144,
+        "name": "BlazBlue: Cross Tag Battle"
+    },
+    {
+        "id": 582,
+        "name": "Vampire Savior"
+    },
+    {
+        "id": 45979,
+        "name": "Your Only Move Is Hustle"
+    },
+    {
+        "id": 11065,
+        "name": "Persona 4 Arena Ultimax"
+    },
+    {
+        "id": 41040,
+        "name": "DNF Duel"
+    },
+    {
+        "id": 33539,
+        "name": "Fall Guys: Ultimate Knockout"
+    },
+    {
+        "id": 11551,
+        "name": "Pokémon GO"
+    },
+    {
+        "id": 53945,
+        "name": "Rivals 2"
+    },
+    {
+        "id": 40325,
+        "name": "Age of Empires IV"
+    },
+    {
+        "id": 1095,
+        "name": "Fortnite"
+    },
+    {
+        "id": 3,
+        "name": "Super Smash Bros. for Wii U"
+    },
+    {
+        "id": 48268,
+        "name": "Duelists of Eden"
+    },
+    {
+        "id": 5,
+        "name": "Super Smash Bros. Brawl"
+    },
+    {
+        "id": 4,
+        "name": "Super Smash Bros."
+    },
+    {
+        "id": 36865,
+        "name": "Melty Blood: Type Lumina"
+    },
+    {
+        "id": 49311,
+        "name": "EA Sports FC 24"
+    },
+    {
+        "id": 10,
+        "name": "League of Legends"
+    },
+    {
+        "id": 34176,
+        "name": "Call of Duty: Warzone"
+    },
+    {
+        "id": 50758,
+        "name": "Counter-Strike 2"
+    },
+    {
+        "id": 22406,
+        "name": "Guilty Gear XX Accent Core Plus R"
+    },
+    {
+        "id": 34223,
+        "name": "VALORANT"
+    },
+    {
+        "id": 32,
+        "name": "Skullgirls: 2nd Encore"
+    },
+    {
+        "id": 49644,
+        "name": "Nickelodeon All-Star Brawl 2"
+    },
+    {
+        "id": 37,
+        "name": "BlazBlue: Central Fiction"
+    },
+    {
+        "id": 36202,
+        "name": "Splatoon 3"
+    },
+    {
+        "id": 33335,
+        "name": "Halo Infinite"
+    },
+    {
+        "id": 45263,
+        "name": "Omega Strikers"
+    },
+    {
+        "id": 33599,
+        "name": "Mystery Game"
+    },
+    {
+        "id": 287,
+        "name": "DRAGON BALL FighterZ"
+    },
+    {
+        "id": 40908,
+        "name": "Yu-Gi-Oh! Master Duel"
+    },
+    {
+        "id": 18,
+        "name": "Ultimate Marvel vs Capcom 3"
+    },
+    {
+        "id": 36,
+        "name": "Guilty Gear Xrd REV2"
+    },
+    {
+        "id": 2165,
+        "name": "Mario Kart 8 Deluxe"
+    },
+    {
+        "id": 610,
+        "name": "Street Fighter III: 3rd Strike"
+    },
+    {
+        "id": 34157,
+        "name": "HewDraw Remix"
+    },
+    {
+        "id": 24,
+        "name": "Rivals of Aether"
+    },
+    {
+        "id": 36963,
+        "name": "The King of Fighters XV"
+    },
+    {
+        "id": 936,
+        "name": "Yu-Gi-Oh! Duel Links"
+    },
+    {
+        "id": 33602,
+        "name": "Project+"
+    },
+    {
+        "id": 48599,
+        "name": "Mortal Kombat 1"
+    },
+    {
+        "id": 38949,
+        "name": "Pokémon Unite"
+    },
+    {
+        "id": 44087,
+        "name": "Overwatch 2"
+    },
+    {
+        "id": 50203,
+        "name": "Under Night In-Birth II Sys:Celes"
+    },
+    {
+        "id": 48548,
+        "name": "Granblue Fantasy Versus: Rising"
+    },
+    {
+        "id": 14,
+        "name": "Rocket League"
+    },
+    {
+        "id": 15,
+        "name": "Brawlhalla"
+    },
+    {
+        "id": 33945,
+        "name": "Guilty Gear: Strive"
+    },
+    {
+        "id": 43868,
+        "name": "Street Fighter 6"
+    },
+    {
+        "id": 1,
+        "name": "Super Smash Bros. Melee"
+    },
+    {
+        "id": 49783,
+        "name": "TEKKEN 8"
+    },
+    {
+        "id": 1386,
+        "name": "Super Smash Bros. Ultimate"
+    }
+]
