@@ -1,3 +1,5 @@
+@use '../../../partials/mixins' as *;
+
 :root {
   font-family: 'Roboto', sans-serif;
   /* font-size: 1.4rem; */
@@ -13,7 +15,16 @@
   --input-bg-color: #fff;
   --input-hover-bg-color: #fff;
   --input-text-color: #000;
-  --month-input-font-size: 1.4rem;
+  --month-input-font-size: 1rem;
   --month-input-width: 277px;
   --month-input-padding: 1rem;
+
+  @include tablet {
+    --month-input-font-size: 1.4rem;
+
+  }
+  @include desktop {
+    --month-input-font-size: 1.4rem;
+
+  }
 }

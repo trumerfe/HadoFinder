@@ -1,6 +1,19 @@
+@use '../../../partials/mixins' as *;
+
 .monthInputField {
-  width: var(--month-input-width);
-  min-width: 200px;
+  /* width: var(--month-input-width); */
+  @include tablet {
+    width: 30%;
+    min-width: 200px;
+  }
+
+  @include desktop {
+    width: 30%;
+    min-width: 200px;
+  }
+
+  // width: 170px;
+  min-width: 140px;
   cursor: pointer;
   font-size: var(--month-input-font-size);
   display: flex;
@@ -11,7 +24,7 @@
   border: 1px solid #0000005b;
   background: var(--input-bg-color);
   color: var(--input-text-color);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
   height: 44px;
 }
 

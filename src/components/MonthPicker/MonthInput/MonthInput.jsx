@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import styles from './MonthInput.module.css';
-import './global.css';
+import styles from './MonthInput.module.scss';
+import './global.scss';
 
 export function MonthInput(props) {
   useEffect(() => {

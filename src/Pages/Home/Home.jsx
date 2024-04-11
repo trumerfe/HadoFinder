@@ -18,8 +18,8 @@ const Home = () => {
   const [eventList, setEventList] = useState([]);
   const [firstDay, setFirstDay] = useState("");
   const [lastDay, setLastDay] = useState("");
-  const [radius, setRadius] = useState(25)
-  const [gamesFilter, setGamesFilter] = useState(null)
+  const [radius, setRadius] = useState(25);
+  const [gamesFilter, setGamesFilter] = useState(null);
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -47,9 +47,9 @@ const Home = () => {
   }, []);
 
   const handleRadiusChange = (event) => {
-    console.log(event.target.value)
-    setRadius(event.target.value)
-  }
+    console.log(event.target.value);
+    setRadius(event.target.value);
+  };
 
   // API Call to Start.gg
   const graphqlTest = async () => {
@@ -95,7 +95,7 @@ const Home = () => {
                 perPage: 100,
                 coordinates: `${location[0]}, ${location[1]}`,
                 radius: `${radius}mi`,
-                videogameId: gamesFilter
+                videogameId: gamesFilter,
               },
             },
           });
@@ -154,38 +154,57 @@ const Home = () => {
 
   useEffect(() => {
     graphqlTest();
-    console.log(gamesFilter)
+    console.log(gamesFilter);
   }, [location, firstTimestamp, radius, gamesFilter]);
 
   const resetSearch = () => {
-    setGamesFilter(null)
-  }
+    setGamesFilter(null);
+  };
 
   return (
     <main>
-      <div className="inputDiv">
-        <form className="inputDiv__radiusForm">
-          <label className="inputDiv__radiusLabel" htmlFor="searchRadius">Select search radius:</label>
-          <select onChange={handleRadiusChange} defaultValue={25} name="radius">
-            <option value={10}>10 Miles</option>
-            <option value={25}>25 Miles</option>
-            <option value={40}>40 Miles</option>
-          </select>
-        </form>
-        <Search setGamesFilter={setGamesFilter} />
-        <button onClick={resetSearch} className="inputDiv__reset">Reset Search</button>
-        <MonthPicker
-          firstDay={firstDay}
-          setFirstDay={setFirstDay}
-          lastDay={lastDay}
-          setLastDay={setLastDay}
+      <section className="inputDiv">
+        <div className="inputDiv__subdiv">
+          <Search setGamesFilter={setGamesFilter} />
+          <button onClick={resetSearch} className="inputDiv__reset">
+            Reset Search
+          </button>
+        </div>
+        <div className="inputDiv__subdiv">
+          <form className="inputDiv__radiusForm">
+            <label className="inputDiv__radiusLabel" htmlFor="searchRadius">
+              Select search radius:
+            </label>
+            <select
+              onChange={handleRadiusChange}
+              defaultValue={25}
+              name="radius"
+            >
+              <option value={10}>10 Miles</option>
+              <option value={25}>25 Miles</option>
+              <option value={40}>40 Miles</option>
+            </select>
+          </form>
+
+          <MonthPicker
+            firstDay={firstDay}
+            setFirstDay={setFirstDay}
+            lastDay={lastDay}
+            setLastDay={setLastDay}
+          />
+        </div>
+      </section>
+      <section className="contentDiv">
+        <Map
+          location={location}
+          setLocation={setLocation}
+          eventList={eventList}
+          radius={radius}
         />
-      </div>
-      <div className="contentDiv">
-        <Map location={location} setLocation={setLocation} eventList={eventList} radius={radius} />
         <div style={{ minWidth: "4%" }}></div>
         <EventCalendar eventList={eventList} />
-      </div>
+      </section>
+      <h2>Test</h2>
     </main>
   );
 };

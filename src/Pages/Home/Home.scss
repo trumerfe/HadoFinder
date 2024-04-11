@@ -1,12 +1,20 @@
 @use "../../partials/mixins" as *;
-@use '../../partials/variables' as *;
-@use '../../partials/global' as *;
+@use "../../partials/variables" as *;
+@use "../../partials/global" as *;
 
 main {
   margin: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include tablet {
+    margin: 0 36px;
+  }
+
+  @include desktop {
+    margin: 0 36px;
+  }
 }
 
 ._pickerContainer_eqlhh_39 {
@@ -15,15 +23,35 @@ main {
 
 .contentDiv {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 90vw;
+  width: 100%;
   overflow: hidden;
+
+  @include desktop {
+    flex-direction: row;
+  }
 }
 
 .inputDiv {
   display: flex;
-  justify-content: space-evenly;
-  width: 90vw;
+  flex-direction: column;
+  // justify-content: space-evenly;
+  // align-items: center;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+  }
 
   &__radiusForm {
     height: 44px;
@@ -33,9 +61,14 @@ main {
     justify-content: space-between;
     border-radius: 5px;
     background-color: white;
-    
+    margin-right: 16px;
+
     @include labelText;
     color: black;
+
+    @include tablet {
+      margin-right: 36px;
+    }
   }
 
   &__radiusLabel {
@@ -45,6 +78,31 @@ main {
   &__reset {
     height: 44px;
     border-radius: 5px;
-    @include labelText
+    width: 170px;
+    margin-left: 16px;
+    @include labelText;
+
+    @include tablet {
+      margin-left: 36px;
+    }
+  }
+
+  &__subdiv {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 16px;
+
+    @include tablet {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    @include desktop {
+      display: flex;
+      width: 50%;
+      justify-content: space-evenly;
+    }
   }
 }

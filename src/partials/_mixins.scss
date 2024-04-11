@@ -1,6 +1,18 @@
 @use "./global" as *;
 @use "./variables" as *;
 
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
 @mixin topnavText {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 400;
@@ -10,14 +22,22 @@
 @mixin topNavTitle {
   font-family: 'Rowdies', Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 3rem;
   font-style: normal;
+
+  @include tablet {
+    font-size: 4rem;
+  }
 }
 
 @mixin labelText {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 400;
-  font-size: 1.4rem;
+  font-size: 1rem;
+
+  @include tablet {
+    font-size: 1.4rem;
+  }
 }
 
 @mixin bodyText {
