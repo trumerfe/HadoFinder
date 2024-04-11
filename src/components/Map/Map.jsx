@@ -92,7 +92,7 @@ const Map = (props) => {
   return (
     // Component from the leaflet react library
     <MapContainer
-      center={[39.04047911605112, 125.7563054764933]}
+      center={[latitude, longitude]}
       zoom={9.5}
       ref={mapRef}
       // changes the dimensions of the map component

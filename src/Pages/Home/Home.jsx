@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import EventCalendar from "../../components/Calendar/Calendar";
 import Search from "../../components/Search/Search";
+import Loading from "../../components/Loading/Loading";
 
 // .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
@@ -14,7 +15,7 @@ const headers = {
 const endpoint = import.meta.env.VITE_SGG_URL;
 
 const Home = () => {
-  const [location, setLocation] = useState([]);
+  const [location, setLocation] = useState([40.76911405953448, -73.97461862009996]);
   const [eventList, setEventList] = useState([]);
   const [firstDay, setFirstDay] = useState("");
   const [lastDay, setLastDay] = useState("");
@@ -178,6 +179,7 @@ const Home = () => {
 
   return (
     <main>
+      <Loading />
       <section className="inputDiv">
         <div className="inputDiv__subdiv">
           <Search setGamesFilter={setGamesFilter} />
