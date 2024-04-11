@@ -40,7 +40,6 @@ const Home = () => {
     const lat = position.coords.latitude;
     const lon = position.coords.longitude;
     const locationVar = [lat, lon];
-    // setLanLon(location)
     setLocation(locationVar);
   }
 
@@ -55,7 +54,7 @@ const Home = () => {
   };
 
   // API Call to Start.gg
-  const graphqlTest = async () => {
+  const apiCall = async () => {
     if (firstTimestamp) {
       if (gamesFilter) {
         try {
@@ -65,7 +64,7 @@ const Home = () => {
             headers: headers,
             data: {
               query: `
-              query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!, $videogameId: ID!) {
+              query Tournaments($perPage: Int, $coordinates: String!, $radius: String!, $videogameId: ID!) {
                 tournaments(query: {
                   perPage: $perPage
                   filter: {
@@ -114,7 +113,7 @@ const Home = () => {
             headers: headers,
             data: {
               query: `
-              query SocalTournaments($perPage: Int, $coordinates: String!, $radius: String!) {
+              query Tournaments($perPage: Int, $coordinates: String!, $radius: String!) {
                 tournaments(query: {
                   perPage: $perPage
                   filter: {
@@ -145,7 +144,6 @@ const Home = () => {
                 perPage: 100,
                 coordinates: `${location[0]}, ${location[1]}`,
                 radius: `${radius}mi`,
-                name: `Next Level Battle Circuit 324`,
               },
             },
           });
@@ -168,7 +166,7 @@ const Home = () => {
   }, [currentEvent]);
 
   useEffect(() => {
-    graphqlTest();
+    apiCall();
   }, [location, firstTimestamp, radius, gamesFilter]);
 
   const resetSearch = () => {

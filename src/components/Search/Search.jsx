@@ -1,18 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import axios from "axios";
-import cors from 'cors';
-import games from '../../assets/data/games.json';
-import test from '../../assets/data/new.json'
+import games from '../../assets/data/games.json'
 
 const Search = (props) => {
 
   const handleOnSelect = (item) => {
-    // console.log('test')
     if (item.id){
       props.setGamesFilter(item.id)
     } else {
-      const gameId = (test.filter((x) => x.name === item.toUpperCase()))
+      const gameId = (games.filter((x) => x.name === item.toUpperCase()))
       props.setGamesFilter(gameId[0].id)
     }
   };
@@ -30,7 +26,7 @@ const Search = (props) => {
   return (
     <div style={{width: 400, zIndex: 6, fontFamily: 'Roboto', fontSize: '1.4rem'}}>
       <ReactSearchAutocomplete
-        items={test}
+        items={games}
         onSearch={handleOnSelect}
         onSelect={handleOnSelect}
         autoFocus

@@ -5,7 +5,6 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import { DateLocalizer } from "react-big-calendar/lib/localizer";
 import { Popup } from "reactjs-popup";
-import { Link } from 'react-router-dom'
 
 const EventCalendar = (props) => {
   const [calendarEvents, setCalendarEvents] = useState([]);
@@ -30,7 +29,6 @@ const EventCalendar = (props) => {
     if (props.eventList[0]) {
       props.eventList.map((item, index) => {
         // startAt * 1000 to convert it to compatible timestamp format (13 digits)
-        // console.log(item.id)
         const startDate = new Date(parseInt(item.startAt * 1000));
         const endDate = new Date(parseInt(item.endAt * 1000));
 
@@ -64,7 +62,6 @@ const EventCalendar = (props) => {
   }, []);
 
   return (
-    // <>
       <article className="calendarDiv">
         {calendarEvents[0] ? (
           <Calendar
@@ -117,7 +114,6 @@ const EventCalendar = (props) => {
           </Popup>
         }
       </article>
-    // </>
   );
 };
 // Handles more events popup
