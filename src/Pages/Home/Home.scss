@@ -106,3 +106,19 @@ main {
     }
   }
 }
+
+.footer {
+  @include footerTest;
+  color: $OffWhite;
+  margin-top: 0;
+
+  @include tablet {
+    margin: 0;
+    margin-bottom: 32px;
+  }
+
+  @include desktop {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+}

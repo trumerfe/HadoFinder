@@ -154,7 +154,6 @@ const Home = () => {
 
   useEffect(() => {
     graphqlTest();
-    console.log(gamesFilter);
   }, [location, firstTimestamp, radius, gamesFilter]);
 
   const resetSearch = () => {
@@ -204,7 +203,7 @@ const Home = () => {
         <div style={{ minWidth: "4%" }}></div>
         <EventCalendar eventList={eventList} />
       </section>
-      <h2>Test</h2>
+      <p className="footer">Creative Commons License Placeholder</p>
     </main>
   );
 };
