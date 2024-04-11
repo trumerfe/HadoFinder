@@ -20,6 +20,8 @@ const Home = () => {
   const [lastDay, setLastDay] = useState("");
   const [radius, setRadius] = useState(25);
   const [gamesFilter, setGamesFilter] = useState(null);
+  const [currentEvent, setCurrentEvent] = useState("");
+  const [savedEvents, setSavedEvents] = useState([]);
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -124,6 +126,7 @@ const Home = () => {
                   }
                 }) {
                   nodes {
+                    id
                     name
                     city
                     venueAddress
@@ -141,10 +144,12 @@ const Home = () => {
                 perPage: 100,
                 coordinates: `${location[0]}, ${location[1]}`,
                 radius: `${radius}mi`,
+                name: `Next Level Battle Circuit 324`,
               },
             },
           });
           setEventList(response.data.data.tournaments.nodes);
+          setSavedEvents(response.data.data.tournaments.nodes);
         } catch (error) {
           console.log(error);
         }
@@ -153,11 +158,22 @@ const Home = () => {
   };
 
   useEffect(() => {
+    if (currentEvent) {
+      setEventList(eventList.filter((x) => x.id === currentEvent));
+    }
+    if (!currentEvent) {
+      setEventList(eventList);
+    }
+  }, [currentEvent]);
+
+  useEffect(() => {
     graphqlTest();
   }, [location, firstTimestamp, radius, gamesFilter]);
 
   const resetSearch = () => {
     setGamesFilter(null);
+    setCurrentEvent("");
+    setEventList(savedEvents)
   };
 
   return (
@@ -169,6 +185,7 @@ const Home = () => {
             Reset Search
           </button>
         </div>
+        <div className="inputDiv__emptyDiv"></div>
         <div className="inputDiv__subdiv">
           <form className="inputDiv__radiusForm">
             <label className="inputDiv__radiusLabel" htmlFor="searchRadius">
@@ -184,7 +201,6 @@ const Home = () => {
               <option value={40}>40 Miles</option>
             </select>
           </form>
-
           <MonthPicker
             firstDay={firstDay}
             setFirstDay={setFirstDay}
@@ -201,7 +217,11 @@ const Home = () => {
           radius={radius}
         />
         <div style={{ minWidth: "4%" }}></div>
-        <EventCalendar eventList={eventList} />
+        <EventCalendar
+          eventList={eventList}
+          currentEvent={currentEvent}
+          setCurrentEvent={setCurrentEvent}
+        />
       </section>
       <p className="footer">Creative Commons License Placeholder</p>
     </main>

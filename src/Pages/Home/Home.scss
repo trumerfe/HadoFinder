@@ -80,6 +80,7 @@ main {
     border-radius: 5px;
     width: 170px;
     margin-left: 16px;
+    border-style: none;
     @include labelText;
 
     @include tablet {
@@ -101,8 +102,16 @@ main {
 
     @include desktop {
       display: flex;
-      width: 50%;
+      width: 48%;
       justify-content: space-evenly;
+    }
+  }
+
+  &__emptyDiv {
+    width: 0;
+
+    @include desktop {
+      width: 4%;
     }
   }
 }
@@ -120,5 +129,16 @@ main {
   @include desktop {
     margin-top: 16px;
     margin-bottom: 0;
+  }
+}
+
+select {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  font-size: 1rem;
+
+  @include tablet {
+    font-size: 1.2rem;
   }
 }

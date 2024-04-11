@@ -8,6 +8,7 @@ import test from '../../assets/data/new.json'
 const Search = (props) => {
 
   const handleOnSelect = (item) => {
+    // console.log('test')
     if (item.id){
       props.setGamesFilter(item.id)
     } else {

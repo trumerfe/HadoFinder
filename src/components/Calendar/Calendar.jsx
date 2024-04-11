@@ -30,6 +30,7 @@ const EventCalendar = (props) => {
     if (props.eventList[0]) {
       props.eventList.map((item, index) => {
         // startAt * 1000 to convert it to compatible timestamp format (13 digits)
+        // console.log(item.id)
         const startDate = new Date(parseInt(item.startAt * 1000));
         const endDate = new Date(parseInt(item.endAt * 1000));
 
@@ -40,6 +41,7 @@ const EventCalendar = (props) => {
           link: item.slug,
           start: new Date(startDate),
           end: new Date(endDate),
+          tournamentId: item.id
         };
         tempArray = [...tempArray, calendarItem];
       });
@@ -53,6 +55,7 @@ const EventCalendar = (props) => {
 
   // Handles modal pop up and modal dynamic text
   const handleSelectEvent = useCallback((event) => {
+    props.setCurrentEvent(event.tournamentId)
     setEventLink(`https://start.gg/${event.link}`)
     setEventDate(event.start.toString().split('(')[0])
     setEventName(event.title);
