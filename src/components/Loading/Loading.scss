@@ -1,0 +1,83 @@
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: $Black;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include topNavTitle;
+  color: $HotPink;
+  animation: visibility 0ms 3s forwards, opacity 1s 2s forwards;
+}
+
+@keyframes opacity {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+@keyframes visibility {
+  from {visibility: visible;}
+  to {visibility: hidden;}
+}
+
+.loader {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: linear-gradient($HotPink, $PastelPink, $Purple);
+  animation: animate 1.2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient($HotPink, $Purple, $PastelPink);
+}
+
+.loader span:nth-child(1) {
+  filter: blur(5px);
+}
+
+.loader span:nth-child(2) {
+  filter: blur(10px);
+}
+
+.loader span:nth-child(3) {
+  filter: blur(25px);
+}
+
+.loader span:nth-child(4) {
+  filter: blur(50px);
+}
+
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: $Black;
+  border: solid $OffWhite 10px;
+  border-radius: 50%;
+}

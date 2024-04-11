@@ -21,6 +21,7 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-date-pickers": "^7.0.0",
     "axios": "^1.6.8",
+    "cors": "^2.8.5",
     "date-fns": "^3.6.0",
     "dotenv": "^16.4.5",
     "leaflet": "^1.9.4",
@@ -32,6 +33,7 @@
     "react-leaflet": "^4.2.1",
     "react-lite-month-picker": "^1.2.18",
     "react-router-dom": "^6.22.3",
+    "react-search-autocomplete": "^8.5.2",
     "reactjs-popup": "^2.0.6",
     "sass": "^1.72.0",
     "styled-components": "^6.1.8"

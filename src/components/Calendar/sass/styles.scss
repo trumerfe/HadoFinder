@@ -1,11 +1,21 @@
+@use '../../../partials/mixins' as *;
 @import './variables';
 @import './reset';
 @import '../../../partials/variables';
+
 
 article {
   max-width: 100%;
   border-radius: 20px;
   overflow: hidden;
+  margin: 16px 0;
+
+  @include tablet {
+    margin: 32px 0;
+  }
+  @include desktop {
+    margin: 0;
+  }
 }
 
 .rbc-calendar {
@@ -17,6 +27,9 @@ article {
   align-items: stretch;
   background-color: white;
   z-index: 2;
+  // font-family: 'trueno', Courier, monospace;
+
+  // @include labelText
 }
 
 .rbc-calendar *,
