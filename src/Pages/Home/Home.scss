@@ -142,3 +142,16 @@ select {
     font-size: 1.2rem;
   }
 }
+
+.helpButton {
+  // @include labelText;
+  font-size: 3.5rem;
+  font-weight: 900;
+  stroke-width: 1px;
+
+  color: violet;
+  position: fixed;
+  bottom: -60px;
+  right: 10px;
+  z-index: 999;
+}

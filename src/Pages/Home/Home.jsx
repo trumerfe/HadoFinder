@@ -6,6 +6,7 @@ import axios from "axios";
 import EventCalendar from "../../components/Calendar/Calendar";
 import Search from "../../components/Search/Search";
 import Loading from "../../components/Loading/Loading";
+import Help from "../../components/Help/Help";
 
 // .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
@@ -23,6 +24,7 @@ const Home = () => {
   const [gamesFilter, setGamesFilter] = useState(null);
   const [currentEvent, setCurrentEvent] = useState("");
   const [savedEvents, setSavedEvents] = useState([]);
+  const [help, setHelp] = useState(false)
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -175,9 +177,15 @@ const Home = () => {
     setEventList(savedEvents)
   };
 
+  const handleHelp = () => {
+    setHelp(true)
+  }
+
   return (
     <main>
+      <p onClick={handleHelp} className="helpButton">?</p>
       <Loading />
+      {help === true ? <Help setHelp={setHelp} /> : ''}
       <section className="inputDiv">
         <div className="inputDiv__subdiv">
           <Search setGamesFilter={setGamesFilter} />
