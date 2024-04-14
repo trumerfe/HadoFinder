@@ -51,7 +51,6 @@ const Home = () => {
   }, []);
 
   const handleRadiusChange = (event) => {
-    console.log(event.target.value);
     setRadius(event.target.value);
   };
 
