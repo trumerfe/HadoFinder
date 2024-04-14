@@ -1,5 +1,6 @@
 @use "../../partials/mixins" as *;
 @use '../../partials/variables' as *;
+@use '../../partials/global' as *;
 
 .topNav {
   display: flex;
@@ -11,6 +12,7 @@
   &__title {
     color: $HotPink;
     @include topNavTitle;
+    // font-family: 'xshow', 'Times New Roman', Times, serif;
     margin: 16px 0;
   }
 

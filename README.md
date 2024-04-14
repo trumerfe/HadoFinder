@@ -79,6 +79,15 @@ This project will be using an external API.
 
 This site will not include Login or User Profile functionality, as it was not deemed necessary for the purposes and scope of the project.
 
+## Installation Instructions
+
+* Download the project files and open the parent folder using VSCode.
+* In your terminal, CD into the parent folder and run the command `npm install`. This should install all the required dependencies for the project to work.
+* Edit the provided `.env.sample` file, replacing the sample value in `VITE_SGG_KEY` with your [start.gg API key](https://developer.start.gg/docs/intro).
+* Rename `.env.sample` to `.env`.
+* In the terminal, run the command `npm run dev` and open the link in your browser. Chrome or Firefox preferred.
+* For BrainStation education team: a [start.gg API key](https://developer.start.gg/docs/intro) will be provided to you directly for ease of use.
+
 ## Roadmap
 
 Step 1 - Setup:
@@ -120,10 +129,8 @@ Step 6 - Styling:
 ## Nice-to-haves
 
 * Aditional server which would allow users to submit their own tournaments in the case of them not being hosted in start.gg.
-* Authentication feature so users can save their locations.
-* Filtering tournaments by games.
-* Filtering tournaments by date range as opposed to month.
-* Letting users adjust distance radius of tournaments shown.
-* Showing region-locked online tournaments.
-* Allowing users to search for tournaments in other areas.
-* Selecting a tournament in the calendar highlights said event in the map.
+* Authentication feature so users can save their locations. (Relational database, Users table stores users, events table stores events, favorites table stores user IDs and event IDs correspondent to that user) (Work in Progress)
+* Filtering tournaments by games. (Done)
+* Letting users adjust distance radius of tournaments shown. (Done)
+* Allowing users to search for tournaments in other areas. (Done)
+* Selecting a tournament in the calendar highlights said event in the map. (Done)

@@ -1,21 +1,57 @@
 @use "./global" as *;
 @use "./variables" as *;
 
+@mixin tablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
 @mixin topnavText {
-  font-family: 'trueno', Helvetica, sans-serif;
+  font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 400;
   font-size: 1rem;
 }
 
 @mixin topNavTitle {
-  font-family: 'trueno', Helvetica, sans-serif;
+  font-family: 'Rowdies', Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 2.25rem;
+  font-size: 3rem;
+  font-style: normal;
+
+  @include tablet {
+    font-size: 4rem;
+  }
 }
 
 @mixin labelText {
-  font-family: 'trueno', Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 400;
   font-size: 1rem;
-  color: $OffWhite;
+
+  @include tablet {
+    font-size: 1.4rem;
+  }
+}
+
+@mixin bodyText {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+@mixin footerTest {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+
+  @include tablet {
+    font-size: 0.8rem;
+  }
 }

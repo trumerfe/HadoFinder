@@ -5,7 +5,6 @@ import { useEffect, useState, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import { DateLocalizer } from "react-big-calendar/lib/localizer";
 import { Popup } from "reactjs-popup";
-import { Link } from 'react-router-dom'
 
 const EventCalendar = (props) => {
   const [calendarEvents, setCalendarEvents] = useState([]);
@@ -40,6 +39,7 @@ const EventCalendar = (props) => {
           link: item.slug,
           start: new Date(startDate),
           end: new Date(endDate),
+          tournamentId: item.id
         };
         tempArray = [...tempArray, calendarItem];
       });
@@ -53,6 +53,7 @@ const EventCalendar = (props) => {
 
   // Handles modal pop up and modal dynamic text
   const handleSelectEvent = useCallback((event) => {
+    props.setCurrentEvent(event.tournamentId)
     setEventLink(`https://start.gg/${event.link}`)
     setEventDate(event.start.toString().split('(')[0])
     setEventName(event.title);
@@ -61,7 +62,6 @@ const EventCalendar = (props) => {
   }, []);
 
   return (
-    // <>
       <article className="calendarDiv">
         {calendarEvents[0] ? (
           <Calendar
@@ -114,7 +114,6 @@ const EventCalendar = (props) => {
           </Popup>
         }
       </article>
-    // </>
   );
 };
 // Handles more events popup

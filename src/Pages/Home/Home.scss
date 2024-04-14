@@ -1,12 +1,20 @@
 @use "../../partials/mixins" as *;
-@use '../../partials/variables' as *;
-@use '../../partials/global' as *;
+@use "../../partials/variables" as *;
+@use "../../partials/global" as *;
 
 main {
   margin: 0 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include tablet {
+    margin: 0 36px;
+  }
+
+  @include desktop {
+    margin: 0 36px;
+  }
 }
 
 ._pickerContainer_eqlhh_39 {
@@ -15,21 +23,135 @@ main {
 
 .contentDiv {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  width: 90vw;
+  width: 100%;
   overflow: hidden;
+
+  @include desktop {
+    flex-direction: row;
+  }
 }
 
 .inputDiv {
   display: flex;
-  justify-content: space-evenly;
-  width: 90vw;
+  flex-direction: column;
+  // justify-content: space-evenly;
+  // align-items: center;
+  width: 100%;
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  @include desktop {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+  }
 
   &__radiusForm {
-    height: 60.8px;
+    height: 44px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
     background-color: white;
-    
+    margin-right: 16px;
+
     @include labelText;
     color: black;
+
+    @include tablet {
+      margin-right: 36px;
+    }
   }
+
+  &__radiusLabel {
+    margin-right: 8px;
+  }
+
+  &__reset {
+    height: 44px;
+    border-radius: 5px;
+    width: 170px;
+    margin-left: 16px;
+    border-style: none;
+    @include labelText;
+
+    @include tablet {
+      margin-left: 36px;
+    }
+  }
+
+  &__subdiv {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 16px;
+
+    @include tablet {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 32px;
+    }
+
+    @include desktop {
+      display: flex;
+      width: 48%;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__emptyDiv {
+    width: 0;
+
+    @include desktop {
+      width: 4%;
+    }
+  }
+}
+
+.footer {
+  @include footerTest;
+  color: $OffWhite;
+  margin-top: 0;
+
+  @include tablet {
+    margin: 0;
+    margin-bottom: 32px;
+  }
+
+  @include desktop {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+}
+
+select {
+  border-style: solid;
+  border-color: black;
+  border-radius: 4px;
+  font-size: 1rem;
+
+  @include tablet {
+    font-size: 1.2rem;
+  }
+}
+
+.helpButton {
+  // @include labelText;
+  font-size: 3.5rem;
+  font-weight: 900;
+  stroke-width: 1px;
+
+  color: violet;
+  position: fixed;
+  bottom: -60px;
+  right: 10px;
+  z-index: 999;
 }

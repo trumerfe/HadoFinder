@@ -5,16 +5,12 @@ import {
   Marker,
   Popup,
   useMapEvents,
-  useMap,
-  useMapEvent,
   Circle,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { useState } from "react";
 import MapHooks from "../MapHooks/MapHooks";
-import { map } from "leaflet";
 import { Icon } from "leaflet";
-import L from "leaflet";
 import mapIcon from "../../assets/icons/icons8-marker-50.png";
 
 const myIcon = new Icon({
@@ -26,8 +22,8 @@ const myIcon = new Icon({
 
 const MultipleMarkers = (props) => {
   return props.data.map((item, index) => {
-    const d = new Date(item.date)
-    const dateArr = d.toString().split('(')
+    const d = new Date(item.date * 1000);
+    const dateArr = d.toString().split("(");
     return (
       <Marker
         icon={myIcon}
@@ -38,11 +34,25 @@ const MultipleMarkers = (props) => {
           <p>{item.name}</p>
           <p>{item.address}</p>
           <p>{dateArr[0]}</p>
-          <a target="blank" href={`https://start.gg/${item.url}`}>{`https://start.gg/${item.url}`}</a>
+          <a
+            target="blank"
+            href={`https://start.gg/${item.url}`}
+          >{`https://start.gg/${item.url}`}</a>
         </Popup>
       </Marker>
     );
   });
+};
+
+const MapEvents = (props) => {
+  useMapEvents({
+    click(e) {
+      props.setLatitude(e.latlng.lat);
+      props.setLongitude(e.latlng.lng);
+      props.setLocation([e.latlng.lat, e.latlng.lng]);
+    },
+  });
+  return false;
 };
 
 const Map = (props) => {
@@ -73,13 +83,12 @@ const Map = (props) => {
     setMyCoords();
   }, [props.location]);
 
-  // const center = [40.72515026722599, -73.99676899560035]
   const fillBlueOptions = { fillColor: "transparent", color: "#b732ff" };
 
   return (
     // Component from the leaflet react library
     <MapContainer
-      center={[10, -10]}
+      center={[latitude, longitude]}
       zoom={9.5}
       ref={mapRef}
       // changes the dimensions of the map component
@@ -112,9 +121,6 @@ const Map = (props) => {
         </Marker>
       ) : (
         <>
-          {/* <Marker opacity={1.0} position={[latitude, longitude]}>
-            <Popup>{props.location}</Popup>
-          </Marker> */}
           {coordsArr ? <MultipleMarkers data={coordsArr} /> : ""}
           <Circle
             center={[latitude, longitude]}
@@ -123,6 +129,11 @@ const Map = (props) => {
           />
         </>
       )}
+      <MapEvents
+        setLatitude={setLatitude}
+        setLongitude={setLongitude}
+        setLocation={props.setLocation}
+      />
     </MapContainer>
   );
 };

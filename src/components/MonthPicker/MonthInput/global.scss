@@ -1,0 +1,30 @@
+@use '../../../partials/mixins' as *;
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  /* font-size: 1.4rem; */
+  --month-active-bg-color: #4ea3983e;
+  --month-hover-bg-color: #f4f4f4;
+  --text-color: #000;
+  --month-border-radius: 7px;
+  --picker-bg-color: #fff;
+  --picker-padding: 2rem;
+  --year-display-margin-top: 0;
+  --year-display-margin-bottom: 1rem;
+  --month-select-padding: 1rem;
+  --input-bg-color: #fff;
+  --input-hover-bg-color: #fff;
+  --input-text-color: #000;
+  --month-input-font-size: 1rem;
+  --month-input-width: 277px;
+  --month-input-padding: 1rem;
+
+  @include tablet {
+    --month-input-font-size: 1.4rem;
+
+  }
+  @include desktop {
+    --month-input-font-size: 1.4rem;
+
+  }
+}
