@@ -110,6 +110,7 @@ const EventCalendar = (props) => {
               <p>{eventDate}</p>
               <a target="blank" href={eventLink}>{eventLink}</a>
               {" "}
+              {props.isLoggedIn === true ? <button>Add Favorite</button> : ''}
             </div>
           </Popup>
         }

@@ -17,7 +17,9 @@ const headers = {
 const endpoint = import.meta.env.VITE_SGG_URL;
 
 const Home = () => {
-  const [location, setLocation] = useState([40.76911405953448, -73.97461862009996]);
+  const [location, setLocation] = useState([
+    40.76911405953448, -73.97461862009996,
+  ]);
   const [eventList, setEventList] = useState([]);
   const [firstDay, setFirstDay] = useState("");
   const [lastDay, setLastDay] = useState("");
@@ -25,8 +27,11 @@ const Home = () => {
   const [gamesFilter, setGamesFilter] = useState(null);
   const [currentEvent, setCurrentEvent] = useState("");
   const [savedEvents, setSavedEvents] = useState([]);
-  const [help, setHelp] = useState(false)
-  const [fav, setFav] = useState(false)
+  const [help, setHelp] = useState(false);
+  const [fav, setFav] = useState(false);
+
+  const [isSignedUp, setIsSignedUp] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -175,26 +180,40 @@ const Home = () => {
   const resetSearch = () => {
     setGamesFilter(null);
     setCurrentEvent("");
-    setEventList(savedEvents)
+    setEventList(savedEvents);
   };
 
   const handleHelp = () => {
-    setHelp(true)
-  }
+    setHelp(true);
+  };
 
   const handleFav = () => {
-    setFav(true)
-  }
+    setFav(true);
+  };
 
   return (
     <main>
-      <p onClick={handleHelp} className="helpButton">?</p>
+      <p onClick={handleHelp} className="helpButton">
+        ?
+      </p>
       <Loading />
-      <Favorites setFav={setFav} />
-      {help === true ? <Help setHelp={setHelp} /> : ''}
+      {fav === true ? (
+        <Favorites
+          setFav={setFav}
+          isSignedUp={isSignedUp}
+          setIsSignedUp={setIsSignedUp}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+        />
+      ) : (
+        ""
+      )}
+      {help === true ? <Help setHelp={setHelp} /> : ""}
       <section className="inputDiv">
         <div className="inputDiv__subdiv">
-          <button onClick={handleFav} className="inputDiv__fav">★</button>
+          <button onClick={handleFav} className="inputDiv__fav">
+            ★
+          </button>
           <Search setGamesFilter={setGamesFilter} />
           <button onClick={resetSearch} className="inputDiv__reset">
             Reset Search
@@ -233,6 +252,7 @@ const Home = () => {
         />
         <div style={{ minWidth: "4%" }}></div>
         <EventCalendar
+          isLoggedIn={isLoggedIn}
           eventList={eventList}
           currentEvent={currentEvent}
           setCurrentEvent={setCurrentEvent}

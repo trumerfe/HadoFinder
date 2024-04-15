@@ -5,8 +5,8 @@ import { jwtDecode } from "jwt-decode";
 import { useEffect } from "react";
 
 const Favorites = (props) => {
-  const [isSignedUp, setIsSignedUp] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isSignedUp, setIsSignedUp] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoginError, setIsLoginError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [Token, setToken] = useState("");
@@ -25,7 +25,7 @@ const Favorites = (props) => {
       });
 
       console.log("Upload successful");
-      setIsSignedUp(true);
+      props.setIsSignedUp(true);
     } catch (error) {
       console.log(error);
     }
@@ -39,19 +39,14 @@ const Favorites = (props) => {
         email: e.target.email.value,
         password: e.target.password.value,
       });
-      // console.log(response.data);
       const token = response.data;
-      setIsLoggedIn(true);
-      // console.log(token)
-
+      props.setIsLoggedIn(true);
       sessionStorage.setItem("Token", token.token);
       setToken(sessionStorage.getItem("Token"));
     } catch (error) {
       console.log(error);
     }
   };
-
-
 
   useEffect(() => {
     if (Token){
@@ -60,7 +55,7 @@ const Favorites = (props) => {
   }, [Token])
 
   useEffect(() => {
-    console.log(tokenContent.id)
+    // console.log(tokenContent.id)
     if (tokenContent){
       getFavorites()
     }
@@ -91,7 +86,7 @@ const Favorites = (props) => {
       <button onClick={handleFavs} className="favs__close">
         close
       </button>
-      <div>
+      {props.isSignedUp === false && props.isLoggedIn === false ? <div>
         <p>Sign Up</p>
         <form onSubmit={handleSignup}>
           <div>
@@ -100,11 +95,10 @@ const Favorites = (props) => {
           <div>
             Password: <input type="password" name="password" />
           </div>
-          <button type="submit">Signup</button>
+          <button type="submit">Sign Up</button>
         </form>
-      </div>
-
-      <div>
+      </div> : ''}
+      {props.isLoggedIn === false ? <div>
         <p>Log In</p>
         <form onSubmit={handleLogIn}>
           <div>
@@ -113,9 +107,9 @@ const Favorites = (props) => {
           <div>
             Password: <input type="password" name="password" />
           </div>
-          <button type="submit">Signup</button>
+          <button type="submit">Log In</button>
         </form>
-      </div>
+      </div> : ''}
     </section>
   );
 };
