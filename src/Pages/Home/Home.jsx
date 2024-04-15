@@ -7,6 +7,7 @@ import EventCalendar from "../../components/Calendar/Calendar";
 import Search from "../../components/Search/Search";
 import Loading from "../../components/Loading/Loading";
 import Help from "../../components/Help/Help";
+import Favorites from "../../components/Favorites/Favorites";
 
 // .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
@@ -25,6 +26,7 @@ const Home = () => {
   const [currentEvent, setCurrentEvent] = useState("");
   const [savedEvents, setSavedEvents] = useState([]);
   const [help, setHelp] = useState(false)
+  const [fav, setFav] = useState(false)
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -181,13 +183,19 @@ const Home = () => {
     setHelp(true)
   }
 
+  const handleFav = () => {
+    setFav(true)
+  }
+
   return (
     <main>
       <p onClick={handleHelp} className="helpButton">?</p>
       <Loading />
+      <Favorites setFav={setFav} />
       {help === true ? <Help setHelp={setHelp} /> : ''}
       <section className="inputDiv">
         <div className="inputDiv__subdiv">
+          <button onClick={handleFav} className="inputDiv__fav">★</button>
           <Search setGamesFilter={setGamesFilter} />
           <button onClick={resetSearch} className="inputDiv__reset">
             Reset Search
