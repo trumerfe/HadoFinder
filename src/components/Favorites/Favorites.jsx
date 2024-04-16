@@ -55,20 +55,26 @@ const Favorites = (props) => {
   }, [Token])
 
   useEffect(() => {
-    // console.log(tokenContent.id)
+    console.log(tokenContent.id)
     if (tokenContent){
+      // console.log(tokenContent)
+      props.setUserId(tokenContent.id)
       getFavorites()
     }
 
-  }, [tokenContent])
+  }, [tokenContent, props.favAdded])
 
   const header = {
     headers: {
-      Authorization: "Bearer " + Token
+      Authorization: "Bearer " + sessionStorage.getItem("Token")
     }
   }
 
+  console.log(header.headers.Authorization)
+
   const getFavorites = async () => {
+    // console.log(Token)
+    console.log(sessionStorage.getItem("Token"))
     try {
       const response = await axios.get(`${baseUrl}/users/${tokenContent.id}/events`, header)
       console.log(response.data)
@@ -86,6 +92,7 @@ const Favorites = (props) => {
       <button onClick={handleFavs} className="favs__close">
         close
       </button>
+      <button onClick={getFavorites}>Refresh</button>
       {props.isSignedUp === false && props.isLoggedIn === false ? <div>
         <p>Sign Up</p>
         <form onSubmit={handleSignup}>

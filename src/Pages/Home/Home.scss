@@ -65,6 +65,21 @@ main {
     @include tablet {
       margin-right: 36px;
     }
+
+    &--logged {
+      background-color: yellow;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // padding: 0;
+      margin-right: 16px;
+      width: 33px;
+
+      @include tablet {
+        margin-right: 36px;
+      }
+    }
   }
 
   &__radiusForm {

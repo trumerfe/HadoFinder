@@ -33,6 +33,9 @@ const Home = () => {
   const [isSignedUp, setIsSignedUp] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+  const [userId, setUserId] = useState('')
+  const [favAdded, setFavAdded] = useState('')
+
   let firstTimestamp = "";
   let lastTimestamp = "";
 
@@ -204,6 +207,8 @@ const Home = () => {
           setIsSignedUp={setIsSignedUp}
           isLoggedIn={isLoggedIn}
           setIsLoggedIn={setIsLoggedIn}
+          setUserId={setUserId}
+          favAdded={favAdded}
         />
       ) : (
         ""
@@ -211,9 +216,15 @@ const Home = () => {
       {help === true ? <Help setHelp={setHelp} /> : ""}
       <section className="inputDiv">
         <div className="inputDiv__subdiv">
-          <button onClick={handleFav} className="inputDiv__fav">
-            ★
-          </button>
+          {isLoggedIn ? (
+            <button onClick={handleFav} className="inputDiv__fav--logged">
+              ★
+            </button>
+          ) : (
+            <button onClick={handleFav} className="inputDiv__fav">
+              ★
+            </button>
+          )}
           <Search setGamesFilter={setGamesFilter} />
           <button onClick={resetSearch} className="inputDiv__reset">
             Reset Search
@@ -256,6 +267,10 @@ const Home = () => {
           eventList={eventList}
           currentEvent={currentEvent}
           setCurrentEvent={setCurrentEvent}
+          setFav={setFav}
+          userId={userId}
+          setFavAdded={setFavAdded}
+          favAdded={favAdded}
         />
       </section>
       <p className="footer">Creative Commons License Placeholder</p>
