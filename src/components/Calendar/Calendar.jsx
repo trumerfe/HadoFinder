@@ -116,7 +116,7 @@ const EventCalendar = (props) => {
   const postFavorite = async () => {
     console.log(props.userId + "event" + eventNum);
     try {
-      await axios.post(`http://localhost:8080/favorites`, {
+      await axios.post(`${baseUrl}/favorites`, {
         user: props.userId,
         event: eventNum,
       });
