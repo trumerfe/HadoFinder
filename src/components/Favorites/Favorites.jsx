@@ -53,7 +53,7 @@ const Favorites = (props) => {
     if (Token) {
       setTokenContent(jwtDecode(Token));
     } else {
-      setToken(sessionStorage.getItem('Token'))
+      setToken(sessionStorage.getItem("Token"));
     }
   }, [Token]);
 
@@ -80,7 +80,7 @@ const Favorites = (props) => {
         header
       );
       setFavorites(response.data);
-      console.log(response.data)
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -91,64 +91,93 @@ const Favorites = (props) => {
   };
 
   const logOut = () => {
-    setFavorites([])
-    props.setIsLoggedIn(false)
-    sessionStorage.setItem('Token', '')
-    setToken('')
-  }
+    setFavorites([]);
+    props.setIsLoggedIn(false);
+    sessionStorage.setItem("Token", "");
+    setToken("");
+  };
 
   return (
     <section className="favs">
-      <button onClick={handleFavs} className="favs__close">
+      <button onClick={handleFavs} className="favs__close favs__button">
         close
       </button>
-      <button onClick={getFavorites}>Refresh</button>
-      {props.isSignedUp === false && props.isLoggedIn === false ? (
-        <div>
-          <p>Sign Up</p>
-          <form onSubmit={handleSignup}>
-            <div>
-              Email: <input type="email" name="email" />
-            </div>
-            <div>
-              Password: <input type="password" name="password" />
-            </div>
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
+      <p className="favHeader">FAVORITES</p>
+      {!props.isLoggedIn ? (
+        <p className="logInPrompt">You must log in to access this feature.</p>
       ) : (
         ""
       )}
-      {props.isLoggedIn === false ? (
-        <div>
-          <p>Log In</p>
-          <form onSubmit={handleLogIn}>
-            <div>
-              Email: <input type="email" name="email" />
-            </div>
-            <div>
-              Password: <input type="password" name="password" />
-            </div>
-            <button type="submit">Log In</button>
-          </form>
-        </div>
-      ) : (
-        <button onClick={logOut}>Log Out</button>
-      )}
-      <p className="favHeader">FAVORITES</p>
-      {favorites && props.isLoggedIn
-        ? favorites.map((item, index) => (
-            <div key={index} className="favDiv">
-              <div className="favDiv__infoDiv">
-                <p className="favDiv__text">{item.name}</p>
-                <p className="favDiv__text">{item.address}</p>
-                <p className="favDiv__text">{item.date.split('.')[0]}</p>
-              </div>
+      <div className="signLog">
+        {props.isLoggedIn === false ? (
+          <div className="signLog__div">
+            <p className="signLog__CTA">Log In</p>
+            <form className="signLog__form" onSubmit={handleLogIn}>
+              <label className="signLog__label" htmlFor="email">
+                Email:{" "}
+              </label>
+              <input className="signLog__field" type="email" name="email" />
+              <label className="signLog__label" htmlFor="password">
+                Password:{" "}
+              </label>
+              <input
+                className="signLog__field"
+                type="password"
+                name="password"
+              />
+              <button className="signLog__button" type="submit">
+                Log In
+              </button>
+            </form>
+          </div>
+        ) : (
+          <button onClick={logOut} className="favs__button favs__logout">
+            Log Out
+          </button>
+        )}
+        {props.isSignedUp === false && props.isLoggedIn === false ? (
+          <div className="signLog__div">
+            {/* <p>You must log in to access this feature.</p> */}
+            <p className="signLog__CTA">Sign Up</p>
+            <form className="signLog__form" onSubmit={handleSignup}>
+              <label className="signLog__label" htmlFor="email">
+                Email:{" "}
+              </label>
+              <input className="signLog__field" type="email" name="email" />
+              <label className="signLog__label" htmlFor="password">
+                Password:{" "}
+              </label>
+              <input
+                className="signLog__field"
+                type="password"
+                name="password"
+              />
+              <button className="signLog__button" type="submit">
+                Sign Up
+              </button>
+            </form>
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+      <div className="bigFavDiv">
+        {favorites && props.isLoggedIn
+          ? favorites.map((item, index) => (
+              <div key={index} className="favDiv">
+                <div className="favDiv__infoDiv">
+                  <p className="favDiv__text">{item.name}</p>
+                  <p className="favDiv__text">{item.address}</p>
+                  <p className="favDiv__text">{item.date.split(".")[0]}</p>
+                </div>
 
-              <a className="favDiv__link" href={item.url}>{item.url}</a>
-            </div>
-          ))
-        : ""}
+                <a className="favDiv__link" href={item.url}>
+                  {item.url}
+                </a>
+              </div>
+            ))
+          : ""}
+      </div>
     </section>
   );
 };

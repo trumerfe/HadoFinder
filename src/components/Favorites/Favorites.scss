@@ -39,6 +39,27 @@
     top: 16px;
     left: 16px;
   }
+
+  &__logout {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  &__button {
+    background-color: $Purple;
+    border-style: none;
+    @include labelText;
+    color: $OffWhite;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 8px;
+    width: 110px;
+  }
+}
+
+.bigFavDiv {
+  overflow: scroll;
 }
 
 .favDiv {
@@ -67,7 +88,64 @@
 
 .favHeader {
   @include favHeader;
-  margin: 16px 0;
+  margin: 0 0 16px 0;
   align-self: center;
   color: $Purple;
+}
+
+.logInPrompt {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 36px;
+  @include favsText
+}
+
+.signLog {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__div {
+    border-style: solid;
+    border-radius: 20px;
+    border-color: $Black;
+    border-width: 1px;
+    padding: 16px;
+    width: 30%;
+  }
+
+  &__CTA {
+    text-align: center;
+    margin: 0;
+    @include signLogCTA;
+    color: $Purple;
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 4px;
+    @include favsText;
+    font-weight: 600;
+  }
+
+  &__field {
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border-style: solid;
+    height: 25px;
+  }
+
+  &__button {
+    background-color: $Purple;
+    @include labelText;
+    color: $OffWhite;
+    border-style: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 600;
+  }
 }

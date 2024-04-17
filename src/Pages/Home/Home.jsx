@@ -222,11 +222,11 @@ const Home = () => {
         <div className="inputDiv__subdiv">
           {isLoggedIn ? (
             <button onClick={handleFav} className="inputDiv__fav--logged">
-              ★
+              <p className="inputDiv__star">★</p>
             </button>
           ) : (
             <button onClick={handleFav} className="inputDiv__fav">
-              ★
+              <p className="inputDiv__star--logged">★</p>
             </button>
           )}
           <Search setGamesFilter={setGamesFilter} />

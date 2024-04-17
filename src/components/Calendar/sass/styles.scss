@@ -18,6 +18,43 @@ article {
   }
 }
 
+.modal {
+  background-color: $OffWhite;
+  border-radius: 5px;
+  width: 30vw;
+  height: 300px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+  &__name {
+    @include signLogCTA;
+    font-size: 1.3rem;
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  &__text {
+    margin: 0;
+    margin-top: 16px;
+  }
+}
+
+.favButton {
+  margin-top: 16px;
+  background-color: $Purple;
+  height: 44px;
+  @include labelText;
+  color: $OffWhite;
+  border-style: none;
+  border-radius: 5px;
+  width: 150px;
+}
+
 .rbc-calendar {
   box-sizing: border-box;
   height: 100%;

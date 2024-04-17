@@ -157,36 +157,26 @@ const EventCalendar = (props) => {
           closeOnDocumentClick
           onClose={closeModal}
         >
-          <div
-            className="modal"
-            style={{
-              backgroundColor: "white",
-              width: "30vw",
-              height: "300px",
-              borderStyle: "solid",
-              borderWidth: "2px",
-              borderColor: "black",
-              borderRadius: "20px",
-              display: "flex",
-              flexDirection: "column",
-              padding: "16px",
-            }}
-          >
+          <div className="modal">
             {" "}
             <a className="close" onClick={closeModal}>
               {" "}
               Close{" "}
             </a>{" "}
-            <p>{eventName}</p>
-            <p>{eventAddress}</p>
-            <p>{eventDate}</p>
-            <a target="blank" href={eventLink}>
+            <p className="modal__name">{eventName}</p>
+            <p className="modal__text">{eventAddress}</p>
+            <p className="modal__text"> {eventDate}</p>
+            <a className="modal__text" target="blank" href={eventLink}>
               {eventLink}
             </a>{" "}
             {props.isLoggedIn === true ? (
-              <button onClick={handleLoggedClick}>Add Favorite</button>
+              <button className="favButton" onClick={handleLoggedClick}>
+                Add Favorite
+              </button>
             ) : (
-              <button onClick={handleNonLogClick}>Add Favorite</button>
+              <button className="favButton" onClick={handleNonLogClick}>
+                Add Favorite
+              </button>
             )}
           </div>
         </Popup>
