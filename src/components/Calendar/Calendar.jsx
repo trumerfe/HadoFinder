@@ -27,7 +27,7 @@ const EventCalendar = (props) => {
   const [favClicked, setFavClicked] = useState(0);
   const [eventNum, setEventNum] = useState("");
 
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "https://hadofinder-f4b5d0573c41.herokuapp.com";
 
   let calendarItem = {};
   let tempArray = [];

@@ -13,7 +13,7 @@ const Favorites = (props) => {
   const [tokenContent, setTokenContent] = useState("");
   const [favorites, setFavorites] = useState([]);
 
-  const baseUrl = "http://localhost:8080";
+  const baseUrl = "https://hadofinder-f4b5d0573c41.herokuapp.com";
 
   const handleSignup = async (e) => {
     e.preventDefault();
