@@ -10,8 +10,8 @@ const Favorites = (props) => {
   const [isLoginError, setIsLoginError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [Token, setToken] = useState("");
-  const [tokenContent, setTokenContent] = useState('')
-  // const [user, setUser]
+  const [tokenContent, setTokenContent] = useState("");
+  const [favorites, setFavorites] = useState([]);
 
   const baseUrl = "http://localhost:8080";
 
@@ -42,50 +42,60 @@ const Favorites = (props) => {
       const token = response.data;
       props.setIsLoggedIn(true);
       sessionStorage.setItem("Token", token.token);
-      setToken(sessionStorage.getItem("Token"));
+      setToken(token.token);
     } catch (error) {
       console.log(error);
     }
   };
 
   useEffect(() => {
-    if (Token){
-      setTokenContent(jwtDecode(Token))
+    // console.log(sessionStorage.getItem('Token'))
+    if (Token) {
+      setTokenContent(jwtDecode(Token));
+    } else {
+      setToken(sessionStorage.getItem('Token'))
     }
-  }, [Token])
+  }, [Token]);
 
   useEffect(() => {
-    console.log(tokenContent.id)
-    if (tokenContent){
-      // console.log(tokenContent)
-      props.setUserId(tokenContent.id)
-      getFavorites()
+    // console.log(Token)
+    if (tokenContent) {
+      props.setUserId(tokenContent.id);
+      getFavorites();
     }
+  }, [tokenContent, props.favAdded]);
 
-  }, [tokenContent, props.favAdded])
+  // console.log(props.favAdded)
 
   const header = {
     headers: {
-      Authorization: "Bearer " + sessionStorage.getItem("Token")
-    }
-  }
-
-  console.log(header.headers.Authorization)
+      Authorization: "Bearer " + sessionStorage.getItem("Token"),
+    },
+  };
 
   const getFavorites = async () => {
-    // console.log(Token)
-    console.log(sessionStorage.getItem("Token"))
     try {
-      const response = await axios.get(`${baseUrl}/users/${tokenContent.id}/events`, header)
+      const response = await axios.get(
+        `${baseUrl}/users/${tokenContent.id}/events`,
+        header
+      );
+      setFavorites(response.data);
       console.log(response.data)
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  } 
+  };
 
   const handleFavs = () => {
     props.setFav(false);
   };
+
+  const logOut = () => {
+    setFavorites([])
+    props.setIsLoggedIn(false)
+    sessionStorage.setItem('Token', '')
+    setToken('')
+  }
 
   return (
     <section className="favs">
@@ -93,30 +103,52 @@ const Favorites = (props) => {
         close
       </button>
       <button onClick={getFavorites}>Refresh</button>
-      {props.isSignedUp === false && props.isLoggedIn === false ? <div>
-        <p>Sign Up</p>
-        <form onSubmit={handleSignup}>
-          <div>
-            Email: <input type="email" name="email" />
-          </div>
-          <div>
-            Password: <input type="password" name="password" />
-          </div>
-          <button type="submit">Sign Up</button>
-        </form>
-      </div> : ''}
-      {props.isLoggedIn === false ? <div>
-        <p>Log In</p>
-        <form onSubmit={handleLogIn}>
-          <div>
-            Email: <input type="email" name="email" />
-          </div>
-          <div>
-            Password: <input type="password" name="password" />
-          </div>
-          <button type="submit">Log In</button>
-        </form>
-      </div> : ''}
+      {props.isSignedUp === false && props.isLoggedIn === false ? (
+        <div>
+          <p>Sign Up</p>
+          <form onSubmit={handleSignup}>
+            <div>
+              Email: <input type="email" name="email" />
+            </div>
+            <div>
+              Password: <input type="password" name="password" />
+            </div>
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+      ) : (
+        ""
+      )}
+      {props.isLoggedIn === false ? (
+        <div>
+          <p>Log In</p>
+          <form onSubmit={handleLogIn}>
+            <div>
+              Email: <input type="email" name="email" />
+            </div>
+            <div>
+              Password: <input type="password" name="password" />
+            </div>
+            <button type="submit">Log In</button>
+          </form>
+        </div>
+      ) : (
+        <button onClick={logOut}>Log Out</button>
+      )}
+      <p className="favHeader">FAVORITES</p>
+      {favorites && props.isLoggedIn
+        ? favorites.map((item, index) => (
+            <div key={index} className="favDiv">
+              <div className="favDiv__infoDiv">
+                <p className="favDiv__text">{item.name}</p>
+                <p className="favDiv__text">{item.address}</p>
+                <p className="favDiv__text">{item.date.split('.')[0]}</p>
+              </div>
+
+              <a className="favDiv__link" href={item.url}>{item.url}</a>
+            </div>
+          ))
+        : ""}
     </section>
   );
 };

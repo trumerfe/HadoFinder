@@ -22,10 +22,10 @@ const EventCalendar = (props) => {
   const [eventDate, setEventDate] = useState("empty");
   const [eventLink, setEventLink] = useState("empty");
   const [eventId, setEventId] = useState("");
-  const [eventISOdate, setEventISOdate] = useState("")
+  const [eventISOdate, setEventISOdate] = useState("");
 
   const [favClicked, setFavClicked] = useState(0);
-  const [eventNum, setEventNum] = useState('')
+  const [eventNum, setEventNum] = useState("");
 
   const baseUrl = "http://localhost:8080";
 
@@ -62,16 +62,14 @@ const EventCalendar = (props) => {
 
   // Handles modal pop up and modal dynamic text
   const handleSelectEvent = useCallback((event) => {
-    console.log(event.start.toString())
+    let dateobj = new Date(event.start.toString());
+    let ISOdate = dateobj.toISOString();
+    let ISOdateUsable = ISOdate.split(".")[0];
 
-    let dateobj = new Date(event.start.toString())
-    let ISOdate = dateobj.toISOString()
-    let ISOdateUsable = ISOdate.split(".")[0]
-
-    setEventISOdate(ISOdateUsable)
+    setEventISOdate(ISOdateUsable);
 
     props.setCurrentEvent(event.tournamentId);
-    setEventId(event.tournamentId)
+    setEventId(event.tournamentId);
     setEventLink(`https://start.gg/${event.link}`);
     setEventDate(event.start.toString().split("(")[0]);
     setEventName(event.title);
@@ -90,44 +88,49 @@ const EventCalendar = (props) => {
         address: eventAddress,
         date: eventISOdate,
         url: eventLink,
-        event_id: eventId
-      })
-      console.log("New Event Added")
-      getEvent()
+        event_id: eventId,
+      });
+      console.log("New Event Added");
+      getEvent();
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const getEvent = async () => {
     try {
       const response = await axios.get(`${baseUrl}/events/${eventId}`);
-      // console.log(response.data.event_num);
-      setEventNum(response.data.event_num)
-      postFavorite()
+      setEventNum(response.data.event_num);
     } catch (error) {
       console.log(`No event found with ID ${eventId}`);
-      postEvent()
+      postEvent();
     }
   };
 
+  useEffect(() => {
+    if (eventNum) {
+      postFavorite();
+    }
+  }, [eventNum]);
+
   const postFavorite = async () => {
-    // console.log(eventNum)
+    console.log(props.userId + "event" + eventNum);
     try {
       await axios.post(`http://localhost:8080/favorites`, {
         user: props.userId,
-        event: eventNum
-      })
-      console.log(`Added event ${eventNum}`)
-      props.setFavAdded(props.favAdded + 1)
+        event: eventNum,
+      });
+      console.log(`Added event ${eventNum}`);
+      props.setFavAdded(props.favAdded + 1);
+      setEventNum("");
     } catch (error) {
-      console.log(error)
+      console.log(error);
+      // handleLoggedClick()
     }
-  }
+  };
 
   const handleLoggedClick = () => {
     setFavClicked(favClicked + 1);
-    console.log(eventId)
     getEvent();
   };
 

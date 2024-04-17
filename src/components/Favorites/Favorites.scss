@@ -40,3 +40,34 @@
     left: 16px;
   }
 }
+
+.favDiv {
+  border-top-style: solid;
+  // border-bottom-style: solid;
+  border-color: $Black;
+  border-width: 1px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  &__infoDiv {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    @include favsText;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    @include favsText;
+  }
+}
+
+.favHeader {
+  @include favHeader;
+  margin: 16px 0;
+  align-self: center;
+  color: $Purple;
+}

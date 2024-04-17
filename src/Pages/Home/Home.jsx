@@ -34,7 +34,11 @@ const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [userId, setUserId] = useState('')
-  const [favAdded, setFavAdded] = useState('')
+  const [favAdded, setFavAdded] = useState(0)
+
+  useEffect(() => {
+    favAdded
+  }, [favAdded])
 
   let firstTimestamp = "";
   let lastTimestamp = "";
