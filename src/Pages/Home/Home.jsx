@@ -49,7 +49,7 @@ const Home = () => {
   }
 
   function error() {
-    console.log("Unable to retrieve your location");
+    // console.log("Unable to retrieve your location");
   }
 
   function success(position) {
@@ -277,7 +277,6 @@ const Home = () => {
           favAdded={favAdded}
         />
       </section>
-      <p className="footer">Creative Commons License Placeholder</p>
     </main>
   );
 };

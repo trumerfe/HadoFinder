@@ -24,7 +24,7 @@ const Favorites = (props) => {
         password: e.target.password.value,
       });
 
-      console.log("Upload successful");
+      // console.log("Upload successful");
       props.setIsSignedUp(true);
     } catch (error) {
       console.log(error);

@@ -89,7 +89,7 @@ const EventCalendar = (props) => {
         url: eventLink,
         event_id: eventId,
       });
-      console.log("New Event Added");
+      // console.log("New Event Added");
       getEvent();
     } catch (error) {
       console.log(error);
@@ -101,7 +101,7 @@ const EventCalendar = (props) => {
       const response = await axios.get(`${baseUrl}/events/${eventId}`);
       setEventNum(response.data.event_num);
     } catch (error) {
-      console.log(`No event found with ID ${eventId}`);
+      // console.log(`No event found with ID ${eventId}`);
       postEvent();
     }
   };
@@ -118,12 +118,12 @@ const EventCalendar = (props) => {
         user: props.userId,
         event: eventNum,
       });
-      console.log(`Added event ${eventNum}`);
+      // console.log(`Added event ${eventNum}`);
       props.setFavAdded(props.favAdded + 1);
       setEventNum("");
+      alert('Added event to your favorites!')
     } catch (error) {
       console.log(error);
-      // handleLoggedClick()
     }
   };
 
