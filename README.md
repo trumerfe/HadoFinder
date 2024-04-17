@@ -134,3 +134,6 @@ Step 6 - Styling:
 * Letting users adjust distance radius of tournaments shown. (Done)
 * Allowing users to search for tournaments in other areas. (Done)
 * Selecting a tournament in the calendar highlights said event in the map. (Done)
+
+## License
+HadoFinder © 2024 by Eric Trumer is licensed under CC BY 4.0 
