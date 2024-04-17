@@ -49,7 +49,6 @@ const Favorites = (props) => {
   };
 
   useEffect(() => {
-    // console.log(sessionStorage.getItem('Token'))
     if (Token) {
       setTokenContent(jwtDecode(Token));
     } else {
@@ -58,14 +57,11 @@ const Favorites = (props) => {
   }, [Token]);
 
   useEffect(() => {
-    // console.log(Token)
     if (tokenContent) {
       props.setUserId(tokenContent.id);
       getFavorites();
     }
   }, [tokenContent, props.favAdded]);
-
-  // console.log(props.favAdded)
 
   const header = {
     headers: {
@@ -80,7 +76,6 @@ const Favorites = (props) => {
         header
       );
       setFavorites(response.data);
-      console.log(response.data);
     } catch (error) {
       console.log(error);
     }

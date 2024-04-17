@@ -57,7 +57,6 @@ const EventCalendar = (props) => {
   useEffect(() => {
     arrMap();
     setCalendarEvents(tempArray);
-    // console.log(eventDate)
   }, [props.eventList]);
 
   // Handles modal pop up and modal dynamic text
@@ -114,7 +113,6 @@ const EventCalendar = (props) => {
   }, [eventNum]);
 
   const postFavorite = async () => {
-    console.log(props.userId + "event" + eventNum);
     try {
       await axios.post(`${baseUrl}/favorites`, {
         user: props.userId,
