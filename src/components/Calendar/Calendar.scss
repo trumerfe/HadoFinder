@@ -1,16 +1,22 @@
-// @import 'react-big-calendar/lib/sass/styles';
-
-// @import '../../../node_modules/react-big-calendar/lib/sass/styles.scss';
-
-// .modal {
-//   background-color: red;
-// }
+@use "../../partials/mixins" as *;
+@use "../../partials/variables" as *;
+@use "../../partials/global" as *;
 
 .calendarDiv {
   // display: flex;
   max-width: 100%;
 }
 
-.modal {
-  background-color: red;
-}
+// .modal {
+//   background-color: $OffWhite;
+//   border-radius: 5px;
+//   width: 30vw;
+//   height: 300px;
+//   border-style: solid;
+//   border-width: 2px;
+//   border-color: black;
+//   border-radius: 20px;
+//   display: flex;
+//   flex-direction: column;
+//   padding: 16px;
+// }

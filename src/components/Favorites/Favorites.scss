@@ -1,0 +1,151 @@
+@use '../../partials/global' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.favs {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 80vw;
+  height: 75vh;
+  background-color: $OffWhite;
+  border-color: $Black;
+  border-radius: 20px;
+  border-width: 2px;
+  border-style: solid;
+  z-index: 1000;
+  padding: 16px;
+  font-size: 0.8rem;
+
+  @include tablet {
+    font-size: 1rem;
+    width: 60vw;
+    height: 75vh;
+  }
+
+  &__heading {
+    align-self: center;
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  &__copy {
+    margin: 0;
+    margin-top: 16px;
+  }
+
+  &__close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+  }
+
+  &__logout {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+
+  &__button {
+    background-color: $Purple;
+    border-style: none;
+    @include labelText;
+    color: $OffWhite;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 8px;
+    width: 110px;
+  }
+}
+
+.bigFavDiv {
+  overflow: scroll;
+}
+
+.favDiv {
+  border-top-style: solid;
+  // border-bottom-style: solid;
+  border-color: $Black;
+  border-width: 1px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  &__infoDiv {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text {
+    @include favsText;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    @include favsText;
+  }
+}
+
+.favHeader {
+  @include favHeader;
+  margin: 0 0 16px 0;
+  align-self: center;
+  color: $Purple;
+}
+
+.logInPrompt {
+  text-align: center;
+  margin: 0;
+  margin-bottom: 36px;
+  @include favsText
+}
+
+.signLog {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__div {
+    border-style: solid;
+    border-radius: 20px;
+    border-color: $Black;
+    border-width: 1px;
+    padding: 16px;
+    width: 30%;
+  }
+
+  &__CTA {
+    text-align: center;
+    margin: 0;
+    @include signLogCTA;
+    color: $Purple;
+    margin-bottom: 16px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    margin-bottom: 4px;
+    @include favsText;
+    font-weight: 600;
+  }
+
+  &__field {
+    margin-bottom: 16px;
+    border-radius: 5px;
+    border-style: solid;
+    height: 25px;
+  }
+
+  &__button {
+    background-color: $Purple;
+    @include labelText;
+    color: $OffWhite;
+    border-style: none;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 600;
+  }
+}

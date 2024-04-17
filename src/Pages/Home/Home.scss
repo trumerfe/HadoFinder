@@ -53,6 +53,43 @@ main {
     width: 100%;
   }
 
+  &__fav {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    border-radius: 5px;
+    border-style: none;
+
+    @include tablet {
+      margin-right: 36px;
+    }
+
+    &--logged {
+      background-color: $Purple;
+      font-size: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 16px;
+      width: 33px;
+      border-radius: 5px;
+      border-style: none;
+      position: relative;
+      width: 44px;
+      height: 44px;
+      color: $OffWhite;
+
+      @include tablet {
+        margin-right: 36px;
+      }
+    }
+  }
+
   &__radiusForm {
     height: 44px;
     padding: 0 16px;
@@ -114,6 +151,18 @@ main {
       width: 4%;
     }
   }
+
+  &__star {
+    margin: 0;
+    position: absolute;
+    top: -2px;
+  }
+
+  &__star--logged {
+    margin: 0;
+    position: absolute;
+    top: -2px;
+  }
 }
 
 .footer {
@@ -141,4 +190,17 @@ select {
   @include tablet {
     font-size: 1.2rem;
   }
+}
+
+.helpButton {
+  // @include labelText;
+  font-size: 3.5rem;
+  font-weight: 900;
+  stroke-width: 1px;
+
+  color: violet;
+  position: fixed;
+  bottom: -60px;
+  right: 10px;
+  z-index: 999;
 }

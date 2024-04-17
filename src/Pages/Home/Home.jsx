@@ -6,6 +6,8 @@ import axios from "axios";
 import EventCalendar from "../../components/Calendar/Calendar";
 import Search from "../../components/Search/Search";
 import Loading from "../../components/Loading/Loading";
+import Help from "../../components/Help/Help";
+import Favorites from "../../components/Favorites/Favorites";
 
 // .env Handling
 const apiKey = import.meta.env.VITE_SGG_KEY;
@@ -15,7 +17,9 @@ const headers = {
 const endpoint = import.meta.env.VITE_SGG_URL;
 
 const Home = () => {
-  const [location, setLocation] = useState([40.76911405953448, -73.97461862009996]);
+  const [location, setLocation] = useState([
+    40.76911405953448, -73.97461862009996,
+  ]);
   const [eventList, setEventList] = useState([]);
   const [firstDay, setFirstDay] = useState("");
   const [lastDay, setLastDay] = useState("");
@@ -23,6 +27,18 @@ const Home = () => {
   const [gamesFilter, setGamesFilter] = useState(null);
   const [currentEvent, setCurrentEvent] = useState("");
   const [savedEvents, setSavedEvents] = useState([]);
+  const [help, setHelp] = useState(false);
+  const [fav, setFav] = useState(false);
+
+  const [isSignedUp, setIsSignedUp] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const [userId, setUserId] = useState('')
+  const [favAdded, setFavAdded] = useState(0)
+
+  useEffect(() => {
+    favAdded
+  }, [favAdded])
 
   let firstTimestamp = "";
   let lastTimestamp = "";
@@ -49,7 +65,6 @@ const Home = () => {
   }, []);
 
   const handleRadiusChange = (event) => {
-    console.log(event.target.value);
     setRadius(event.target.value);
   };
 
@@ -172,14 +187,48 @@ const Home = () => {
   const resetSearch = () => {
     setGamesFilter(null);
     setCurrentEvent("");
-    setEventList(savedEvents)
+    setEventList(savedEvents);
+  };
+
+  const handleHelp = () => {
+    setHelp(true);
+  };
+
+  const handleFav = () => {
+    setFav(true);
   };
 
   return (
     <main>
+      <p onClick={handleHelp} className="helpButton">
+        ?
+      </p>
       <Loading />
+      {fav === true ? (
+        <Favorites
+          setFav={setFav}
+          isSignedUp={isSignedUp}
+          setIsSignedUp={setIsSignedUp}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          setUserId={setUserId}
+          favAdded={favAdded}
+        />
+      ) : (
+        ""
+      )}
+      {help === true ? <Help setHelp={setHelp} /> : ""}
       <section className="inputDiv">
         <div className="inputDiv__subdiv">
+          {isLoggedIn ? (
+            <button onClick={handleFav} className="inputDiv__fav--logged">
+              <p className="inputDiv__star">★</p>
+            </button>
+          ) : (
+            <button onClick={handleFav} className="inputDiv__fav">
+              <p className="inputDiv__star--logged">★</p>
+            </button>
+          )}
           <Search setGamesFilter={setGamesFilter} />
           <button onClick={resetSearch} className="inputDiv__reset">
             Reset Search
@@ -218,9 +267,14 @@ const Home = () => {
         />
         <div style={{ minWidth: "4%" }}></div>
         <EventCalendar
+          isLoggedIn={isLoggedIn}
           eventList={eventList}
           currentEvent={currentEvent}
           setCurrentEvent={setCurrentEvent}
+          setFav={setFav}
+          userId={userId}
+          setFavAdded={setFavAdded}
+          favAdded={favAdded}
         />
       </section>
       <p className="footer">Creative Commons License Placeholder</p>

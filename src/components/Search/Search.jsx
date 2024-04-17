@@ -24,7 +24,7 @@ const Search = (props) => {
   };
 
   return (
-    <div style={{width: 400, zIndex: 6, fontFamily: 'Roboto', fontSize: '1.4rem'}}>
+    <div style={{width: 380, zIndex: 6, fontFamily: 'Roboto', fontSize: '1.4rem'}}>
       <ReactSearchAutocomplete
         items={games}
         onSearch={handleOnSelect}

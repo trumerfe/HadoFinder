@@ -46,12 +46,6 @@
   font-size: 1.4rem;
 }
 
-@mixin test {
-  font-family: 'Roboto', Helvetica, sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
-}
-
 @mixin footerTest {
   font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 400;
@@ -60,4 +54,24 @@
   @include tablet {
     font-size: 0.8rem;
   }
+}
+
+@mixin favsText {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+@mixin favHeader {
+  font-family: 'Rowdies', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  font-style: normal;
+}
+
+@mixin signLogCTA {
+  font-family: 'Rowdies', Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+  font-style: normal;
 }

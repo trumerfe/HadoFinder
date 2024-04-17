@@ -47,9 +47,7 @@ const MultipleMarkers = (props) => {
 const MapEvents = (props) => {
   useMapEvents({
     click(e) {
-      console.log(e.latlng.lat);
       props.setLatitude(e.latlng.lat);
-      console.log(e.latlng.lng);
       props.setLongitude(e.latlng.lng);
       props.setLocation([e.latlng.lat, e.latlng.lng]);
     },
