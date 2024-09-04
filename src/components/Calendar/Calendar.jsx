@@ -142,6 +142,7 @@ const EventCalendar = (props) => {
           startAccessor="start"
           endAccessor="end"
           style={{ height: "70vh" }}
+          date={props.firstDay}
           onSelectEvent={handleSelectEvent}
           popup
         />

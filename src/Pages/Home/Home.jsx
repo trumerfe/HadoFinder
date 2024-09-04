@@ -198,6 +198,9 @@ const Home = () => {
     setFav(true);
   };
 
+  // console.log(firstDay.getFullYear())
+  // console.log(firstDay.getMonth())
+
   return (
     <main>
       <p onClick={handleHelp} className="helpButton">
@@ -267,6 +270,7 @@ const Home = () => {
         />
         <div style={{ minWidth: "4%" }}></div>
         <EventCalendar
+          firstDay={firstDay}
           isLoggedIn={isLoggedIn}
           eventList={eventList}
           currentEvent={currentEvent}

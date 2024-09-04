@@ -40,6 +40,8 @@ export function MonthPicker(props) {
     }
   }, []);
 
+  console.log(typeof(year))
+
   const changeYear = (year) => {
     setYear(year);
   };
@@ -106,7 +108,7 @@ export function MonthPicker(props) {
         <button
           className={styles.button}
           aria-label='Next Year'
-          onClick={(e) => changeYear(year + 1)}
+          onClick={(e) => changeYear(parseInt(year) + 1)}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
